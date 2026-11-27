@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fuzzatrade.com.br/</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://fuzzatrade.com.br/privacidade</loc><lastmod>2026-11-09</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fuzzatrade.com.br/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/og-fuzzatrade.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/fabrica.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/setor_ceramica_linha.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/setor_industrial.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/setor_casa.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/setor_construcao.jpg</image:loc></image:image>
+    <image:image><image:loc>https://fuzzatrade.com.br/assets/setor_equipamentos.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://fuzzatrade.com.br/privacidade</loc><lastmod>2026-11-27</lastmod></url>
   <url><loc>https://fuzzatrade.com.br/privacy-en</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://fuzzatrade.com.br/privacy-es</loc><lastmod>2026-11-09</lastmod></url>
 </urlset>
