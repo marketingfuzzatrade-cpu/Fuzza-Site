@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canal de Denúncias | Fuzza Trade</title>
+<meta name="description" content="Canal de denúncias da Fuzza Trade para colaboradores. Seu relato é tratado com sigilo e confidencialidade pelo RH.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#13162a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#000;color:#EFEFEF;font-family:'Acumin Pro','Hanken Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:#fbbf26}
+.bg{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(60% 40% at 50% 0%,rgba(51,84,161,0.35),rgba(51,84,161,0) 70%),radial-gradient(40% 30% at 100% 100%,rgba(251,191,38,0.08),rgba(251,191,38,0) 70%)}
+.w{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:40px 20px 90px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.top img{height:40px;width:auto;display:block}
+.back{color:#c4c9da;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+h1{margin:36px 0 10px;font-weight:400;font-size:clamp(30px,5.5vw,48px);letter-spacing:-0.02em;line-height:1.1;background:linear-gradient(90deg,#c9d4ff 0%,#EFEFEF 45%,#fbbf26 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin:0 0 28px;color:#c4c9da;font-size:17px;font-weight:300}
+.glass{position:relative;border-radius:22px;border:1px solid rgba(255,255,255,0.09);background:linear-gradient(180deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.015) 38%,rgba(255,255,255,0) 100%),radial-gradient(110% 80% at 0% 0%,rgba(51,84,161,0.26),rgba(51,84,161,0) 60%),rgba(14,15,22,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 30px 70px -36px rgba(0,0,0,0.9);padding:32px}
+.notice{margin:0 0 26px;padding:16px 18px;border-radius:14px;border:1px solid rgba(251,191,38,0.35);background:rgba(251,191,38,0.07);font-size:15px;color:#e6e8f0}
+.notice strong{color:#fbbf26;font-weight:600}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:14px;margin-bottom:8px;color:#EFEFEF}
+.field label .req{color:#fbbf26}
+.field .hint{margin:8px 0 0;font-size:13px;color:#a9afc2}
+.field input[type=text],.field input[type=date],.field textarea,.field select{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(10,10,14,0.55);color:#EFEFEF;font-size:16px;font-family:inherit}
+.field textarea{min-height:170px;padding:14px 16px;resize:vertical;line-height:1.5}
+.field input::placeholder,.field textarea::placeholder{color:#8c92a6}
+.field input[type=date]{color-scheme:dark}
+.field select{appearance:none;-webkit-appearance:none;padding-right:42px;background:rgba(10,10,14,0.55) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 14px center;background-size:16px}
+.field select:invalid{color:#8c92a6}
+.field select option{background:#13162a;color:#EFEFEF}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid #fbbf26;outline-offset:2px}
+.filebtn{position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:0 16px;border-radius:12px;border:1px dashed rgba(251,191,38,0.65);background:rgba(10,10,14,0.55);color:#EFEFEF;font-size:15px;cursor:pointer}
+.filebtn:focus-within{outline:2px solid #fbbf26;outline-offset:2px}
+.filebtn input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.filebtn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.err{display:none;margin:10px 0 0;font-size:14px;color:#ff9b9b}
+.btn-primary{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 6px 0 22px;border-radius:12px;background:#EFEFEF;color:#0a0a0a;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;box-shadow:0 0 0 1px rgba(255,255,255,0.5),0 10px 30px -8px rgba(251,191,38,0.5);transition:scale 160ms ease,background .25s ease}
+.btn-primary:active{scale:0.97}
+.btn-primary:focus-visible{outline:2px solid #fbbf26;outline-offset:3px}
+.btn-primary .dot{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:#fbbf26;color:#0a0a0a}
+.btn-primary.is-sending{pointer-events:none;opacity:.7}
+.center{display:flex;justify-content:center;margin-top:8px}
+.foot{margin:22px 0 0;text-align:center;font-size:13px;color:#a9afc2}
+@media (max-width:480px){.glass{padding:22px 18px}.w{padding-top:28px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="w">
+<div class="top"><a href="/"><img src="assets/w_fuzza.png" alt="Fuzza Trade"></a><a class="back" href="/">Voltar ao site</a></div>
+<h1>Canal de Denúncias</h1>
+<p class="lead">Um espaço para colaboradores da Fuzza relatarem condutas inadequadas. Seu relato é tratado com sigilo e confidencialidade pelo RH.</p>
+
+<form class="glass" name="canal-denuncias" method="POST" action="/obrigado-denuncia.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="campo-extra" id="frm">
+<input type="hidden" name="form-name" value="canal-denuncias">
+<p style="display:none"><label>Não preencha este campo: <input name="campo-extra" tabindex="-1" autocomplete="off"></label></p>
+
+<div class="notice"><strong>Antes de enviar:</strong> não informe seu nome neste formulário. Evite incluir dados que possam identificar você. Fotos e arquivos Word podem guardar informações escondidas, como autor e local. Prefira anexar um PDF ou uma imagem sem metadados.</div>
+
+<div class="field">
+<label for="d-tipo">Tipo de denúncia <span class="req" aria-hidden="true">*</span></label>
+<select id="d-tipo" name="tipo" required>
+<option value="" disabled selected>Selecione uma categoria</option>
+<option>Assédio moral</option>
+<option>Assédio sexual</option>
+<option>Discriminação</option>
+<option>Fraude ou corrupção</option>
+<option>Conflito de interesses</option>
+<option>Uso indevido de recursos da empresa</option>
+<option>Segurança e saúde no trabalho</option>
+<option>Violação de política ou do código de conduta</option>
+<option>Outro</option>
+</select>
+</div>
+
+<div class="field">
+<label for="d-data">Data do ocorrido (aproximada) <span class="req" aria-hidden="true">*</span></label>
+<input id="d-data" name="data_ocorrido" type="date" required>
+</div>
+
+<div class="field">
+<label for="d-local">Local ou departamento</label>
+<input id="d-local" name="local" type="text" maxlength="120" placeholder="Ex.: Setor de Vendas, Filial SP, etc." autocomplete="off">
+</div>
+
+<div class="field">
+<label for="d-desc">Descrição detalhada <span class="req" aria-hidden="true">*</span></label>
+<textarea id="d-desc" name="descricao" required minlength="20" maxlength="5000" placeholder="Descreva o ocorrido com o máximo de detalhes possível..."></textarea>
+<p class="hint">Evite incluir dados que possam identificar você.</p>
+</div>
+
+<div class="field">
+<label for="d-anexo">Anexar evidências (opcional)</label>
+<div class="filebtn"><input id="d-anexo" name="evidencia" type="file" accept=".jpg,.jpeg,.png,.pdf,.docx,.txt"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5l-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9"></path></svg><span id="flabel">Escolher arquivo</span></div>
+<p class="hint">Formatos: JPG, PNG, PDF, DOCX, TXT. Tamanho máximo: 5 MB.</p>
+<p class="err" id="ferr" role="alert">O arquivo passa de 5 MB. Escolha um arquivo menor.</p>
+</div>
+
+<div class="center"><button type="submit" class="btn-primary" id="btn"><span>Enviar denúncia</span><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button></div>
+<p class="foot">Seu relato vai somente para o RH da Fuzza. Tratamos os dados conforme a nossa <a href="/privacidade.html">política de privacidade</a>.</p>
+</form>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('d-anexo'),l=document.getElementById('flabel'),e=document.getElementById('ferr'),frm=document.getElementById('frm'),b=document.getElementById('btn');
+  var MAX=5*1024*1024;
+  f.addEventListener('change',function(){
+    var file=f.files&&f.files[0];
+    e.style.display='none';
+    if(!file){l.textContent='Escolher arquivo';return;}
+    if(file.size>MAX){f.value='';l.textContent='Escolher arquivo';e.style.display='block';return;}
+    l.textContent=file.name;
+  });
+  var d=document.getElementById('d-data');
+  try{var t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());d.max=t.toISOString().slice(0,10);}catch(x){}
+  frm.addEventListener('submit',function(){b.classList.add('is-sending');});
+})();
+</script>
+</body>
+</html>

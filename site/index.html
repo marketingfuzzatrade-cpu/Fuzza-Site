@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuzza Trade | Importação e exportação com segurança</title>
+<meta name="description" content="A Fuzza Trade conecta empresas ao mercado internacional: importação com e sem radar, exportação, inspeção em fábricas na Ásia e consultoria em comércio exterior.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuzza Trade | Importação e exportação com segurança">
+<meta property="og:description" content="A Fuzza Trade conecta empresas ao mercado internacional: importação com e sem radar, exportação, inspeção em fábricas na Ásia e consultoria em comércio exterior.">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#13162a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Tag Manager (desativado). Para ativar: troque GTM-XXXXXXX pelo seu ID e apague a linha INICIO-COMENTARIO e a linha FIM-COMENTARIO. -->
+<!-- INICIO-COMENTARIO
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+FIM-COMENTARIO -->
+<style>
+body{margin:0;background:#000}
+*{box-sizing:border-box}
+section{scroll-margin-top:110px}
+a{color:#fbbf26}
+@media (hover:hover) and (pointer:fine){a:hover{color:#ffd45e}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* luzes de fundo (únicos elementos com granulação) */
+:root{--ease-out:cubic-bezier(0.23,1,0.32,1);--ease-in-out:cubic-bezier(0.77,0,0.175,1)}
+.aura{position:absolute;pointer-events:none;background-image:url(assets/noise_soft.png),linear-gradient(135deg,#3354a1,#3354a1);background-blend-mode:overlay,normal;-webkit-mask-image:radial-gradient(closest-side,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.35) 50%,transparent 100%);mask-image:radial-gradient(closest-side,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.35) 50%,transparent 100%)}
+.aura-y{background-image:url(assets/noise_soft.png),linear-gradient(135deg,#fbbf26,#fbbf26)}
+.aura-m{background-image:url(assets/noise_soft.png),linear-gradient(135deg,#3354a1 15%,#fbbf26 95%)}
+.cone{position:absolute;pointer-events:none;background-image:url(assets/noise_soft.png),linear-gradient(180deg,#8ea8ff,#3354a1 60%,#13162a);background-blend-mode:overlay,normal;-webkit-mask-image:radial-gradient(ellipse 50% 100% at 50% 0%,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.18) 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 100% at 50% 0%,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.18) 55%,transparent 100%)}
+.horizon{position:absolute;left:0;right:0;bottom:0;height:160px;pointer-events:none;background:radial-gradient(ellipse 55% 100% at 50% 100%,rgba(51,84,161,0.55),rgba(51,84,161,0) 70%)}
+.horizon::after{content:"";position:absolute;left:15%;right:15%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(142,168,255,0.9),rgba(251,191,38,0.9),transparent)}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(142,168,255,0.09) 1px,transparent 1px),linear-gradient(90deg,rgba(142,168,255,0.09) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 15%,transparent 75%);mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 15%,transparent 75%)}
+.corner{position:absolute;width:90px;height:90px;pointer-events:none}
+.shard{position:absolute;bottom:140px;width:64px;height:380px;overflow:hidden;-webkit-box-reflect:below 0 linear-gradient(transparent 56%,rgba(255,255,255,0.3));border-radius:6px;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,236,170,0.95) 38%,rgba(251,191,38,0.85) 55%,rgba(51,84,161,0.7) 80%,rgba(0,0,0,0) 100%);box-shadow:0 0 50px rgba(251,191,38,0.45),0 0 120px rgba(51,84,161,0.35)}
+.shard.l{transform:perspective(520px) rotateY(62deg) skewY(-6deg)}
+.shard.r{transform:perspective(520px) rotateY(-62deg) skewY(6deg)}
+
+/* vidro dos cards (sem granulação) */
+.glass{position:relative;border-radius:22px;border:1px solid rgba(255,255,255,0.09);background:linear-gradient(180deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.015) 38%,rgba(255,255,255,0.0) 100%),radial-gradient(110% 80% at 0% 0%,rgba(51,84,161,0.26),rgba(51,84,161,0) 60%),rgba(14,15,22,0.55);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(142,168,255,0.22),0 30px 70px -36px rgba(0,0,0,0.95)}
+.glass.warm{background:linear-gradient(180deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.015) 38%,rgba(255,255,255,0) 100%),radial-gradient(110% 80% at 100% 0%,rgba(251,191,38,0.18),rgba(251,191,38,0) 60%),rgba(14,15,22,0.55)}
+
+/* nome das seções (barra numerada) */
+.lbar{position:relative;display:inline-flex;align-items:center;justify-content:space-between;gap:48px;min-width:300px;padding:14px 18px;border-radius:10px;font-size:15px;color:#EFEFEF;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(180deg,rgba(18,20,30,0.55) 0%,rgba(51,84,161,0.3) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),inset 0 -1px 0 rgba(142,168,255,0.9),0 12px 26px -14px rgba(51,84,161,0.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.lbar .n{font-size:20px;font-weight:300}
+.lbar.gold{background:linear-gradient(180deg,rgba(18,20,30,0.55) 0%,rgba(251,191,38,0.2) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),inset 0 -1px 0 rgba(251,191,38,0.9),0 12px 26px -14px rgba(251,191,38,0.8)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px;margin-bottom:52px}
+.gtitle{margin:0;max-width:680px;text-align:right;font-size:clamp(30px,4vw,50px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;background:linear-gradient(90deg,#c9d4ff 0%,#EFEFEF 40%,#fbbf26 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* botões */
+.btn-primary{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 6px 0 22px;border-radius:12px;background:#EFEFEF;color:#0a0a0a;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 0 0 1px rgba(255,255,255,0.5),0 10px 30px -8px rgba(251,191,38,0.5)}
+@media (hover:hover) and (pointer:fine){.btn-primary:hover{color:#0a0a0a;background:#ffffff}}
+.btn-primary .dot{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:#fbbf26;color:#0a0a0a}
+.btn-ghost{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:12px;border:1px solid rgba(239,239,239,0.45);color:#EFEFEF;font-weight:500;font-size:15px;text-decoration:none;background:rgba(10,10,14,0.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media (hover:hover) and (pointer:fine){.btn-ghost:hover{color:#EFEFEF;border-color:#fbbf26}}
+.more{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:9px;border:1px solid rgba(255,255,255,0.22);color:#EFEFEF;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;background:rgba(10,10,14,0.35)}
+@media (hover:hover) and (pointer:fine){.more:hover{color:#0a0a0a;background:#fbbf26;border-color:#fbbf26}}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:5px 6px 5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);background:rgba(20,22,32,0.6);font-size:13px;color:#d8dcea}
+.chip b{font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(251,191,38,0.16);color:#fbbf26;border:1px solid rgba(251,191,38,0.4)}
+.icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);color:#EFEFEF;background:rgba(10,10,14,0.4)}
+@media (hover:hover) and (pointer:fine){.icon-link:hover{border-color:#fbbf26;color:#fbbf26}}
+
+/* números (estilo "Choose your account") */
+.bignum.long{font-size:128px}
+.ncard{min-height:290px;padding:26px 28px;overflow:hidden;display:flex;flex-direction:column;gap:10px}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;font-size:15px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.05)}
+.tag{position:absolute;top:22px;right:22px;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(10,10,14,0.45);font-size:12px;color:#d8dcea}
+.dia{display:inline-block;width:6px;height:6px;transform:rotate(45deg);background:currentColor;opacity:0.85}
+.bignum{position:absolute;right:22px;bottom:14px;font-size:170px;font-weight:800;line-height:1;letter-spacing:-0.04em;-webkit-text-stroke:1.5px rgba(255,255,255,0.18);color:transparent;-webkit-background-clip:text;background-clip:text;pointer-events:none}
+.n-gold{background-image:linear-gradient(180deg,rgba(251,191,38,0.95) 0%,rgba(251,191,38,0.25) 55%,rgba(251,191,38,0) 100%)}
+.n-blue{background-image:linear-gradient(180deg,rgba(160,182,255,0.95) 0%,rgba(51,84,161,0.45) 55%,rgba(51,84,161,0) 100%)}
+.n-silver{background-image:linear-gradient(180deg,rgba(239,239,239,0.9) 0%,rgba(150,150,160,0.3) 55%,rgba(150,150,160,0) 100%)}
+.n-mix{background-image:linear-gradient(180deg,rgba(251,191,38,0.95) 0%,rgba(142,168,255,0.45) 55%,rgba(51,84,161,0) 100%)}
+.circuit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* serviços e setores */
+.svc{flex:0 1 calc(33.333% - 15px);min-width:320px;padding:28px;display:flex;flex-direction:column;gap:10px;min-height:340px;overflow:hidden}
+.svc h3{margin:0;font-size:25px;font-weight:500;line-height:1.15}
+.svc .sub{margin:0;font-size:14px;color:#fbbf26}
+.svc p.txt{margin:6px 0 0;color:#c4c9da;font-size:16px}
+.sec{min-height:270px;overflow:hidden;padding:28px;display:flex;flex-direction:column;gap:10px}
+.sec-img{position:absolute;top:0;right:0;bottom:0;width:64%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,0.6) 30%,#000 70%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,0.6) 30%,#000 70%)}
+.ghost{position:absolute;right:16px;bottom:-36px;font-size:190px;font-weight:800;line-height:1;color:rgba(239,239,239,0.13);pointer-events:none}
+
+/* linha do tempo */
+
+.logo-tile{display:flex;align-items:center;justify-content:center;min-height:108px;padding:18px 20px;border-radius:18px;background:rgba(239,239,239,0.94);border:1px solid rgba(255,255,255,0.7);box-shadow:0 18px 40px -22px rgba(0,0,0,0.9),0 0 30px -12px rgba(142,168,255,0.6)}
+.logo-tile img{max-width:150px;max-height:58px;object-fit:contain;display:block}
+
+@media (min-width:900px){.clients-grid{grid-template-columns:repeat(4,1fr)!important}}
+@media (max-width:640px){.clients-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important}.logo-tile{min-height:88px;padding:12px}.logo-tile img{max-width:100%;max-height:52px}.logo-tile.feat{min-height:104px}.logo-tile.feat img{max-height:62px}}
+.logo-tile.feat{min-height:136px;border-color:rgba(251,191,38,0.55);box-shadow:0 18px 40px -22px rgba(0,0,0,0.9),0 0 36px -8px rgba(251,191,38,0.45)}
+.logo-tile.feat img{max-width:190px;max-height:76px}
+@media (max-width:640px){.clients-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.logo-tile{min-width:0}.logo-tile.feat{min-height:104px}.logo-tile.feat img{max-width:100%;max-height:62px}}
+/* cabeçalho: dólar + PTAX */
+.fx{display:flex;align-items:center;gap:8px}
+.fx-usd{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);background:rgba(10,10,14,0.4);color:#EFEFEF;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fx-l{font-size:11px;letter-spacing:0.1em;color:#fbbf26;font-weight:700}
+.fx-v{font-size:15px;font-weight:600}
+.fx-usd.live .fx-l::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#4ade80;margin-right:6px;box-shadow:0 0 8px #4ade80;vertical-align:1px;animation:fxpulse 1.6s ease-in-out infinite}
+@keyframes fxpulse{50%{opacity:0.3}}
+@media (prefers-reduced-motion:reduce){.fx-usd.live .fx-l::before{animation:none}}
+.fx-d{font-size:11px;font-weight:700}
+.fx-d.up{color:#4ade80}.fx-d.down{color:#f87171}
+.fx-ptax{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 12px;border-radius:12px;border:1px solid rgba(251,191,38,0.55);background:rgba(251,191,38,0.08);color:#fbbf26;font-size:12px;font-weight:800;letter-spacing:0.08em;text-decoration:none;transition:background .25s ease,color .25s ease}
+@media (hover:hover) and (pointer:fine){.fx-ptax:hover{background:#fbbf26;color:#13162a}}
+.hdr-break{display:none}
+/* como funciona: etapas animadas */
+.flow5{position:relative;margin-top:60px}
+.f5-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.f5-step{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:0 8px}
+.f5-ic{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#cfd8ff;background:radial-gradient(circle at 30% 25%,rgba(142,168,255,0.3),rgba(14,15,22,0.92) 70%);border:1px solid rgba(142,168,255,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 0 26px -6px rgba(51,84,161,0.95)}
+.f5-ic svg{width:36px;height:36px}
+.f5-last .f5-ic{color:#ffd36b;border-color:rgba(251,191,38,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 0 28px -4px rgba(251,191,38,0.6)}
+.f5-txt{display:flex;flex-direction:column;gap:4px;align-items:center}
+.f5-n{font-size:12px;letter-spacing:0.16em;color:#fbbf26}
+.f5-t{font-size:18px;font-weight:500;line-height:1.25;max-width:190px}
+.f5-line{position:absolute;left:10%;right:10%;top:42px;height:2px;border-radius:2px;background:rgba(142,168,255,0.2);z-index:1}
+.f5-fill{position:absolute;inset:0;border-radius:2px;background:linear-gradient(90deg,#3354a1,#8ea8ff 55%,#fbbf26);box-shadow:0 0 14px rgba(142,168,255,0.7);transform-origin:left center}
+.flow5.armed .f5-step{opacity:0;transform:translateY(16px) scale(0.9)}
+.flow5.armed .f5-fill{transform:scaleX(0)}
+.flow5.go .f5-step{opacity:1;transform:none;transition:opacity .5s ease,transform .5s var(--ease-out);transition-delay:calc(var(--i) * .55s)}
+.flow5.go .f5-fill{transform:scaleX(1);transition:transform 2.3s linear .1s}
+.flow5.go.done .f5-step{transition-delay:0s}
+.flow5.go.done .f5-ic{animation:f5glow 2.4s ease-in-out infinite alternate}
+.flow5.go.done .f5-fill{animation:f5line 2.4s ease-in-out infinite alternate}
+@keyframes f5glow{from{color:#cfd8ff;border-color:rgba(142,168,255,0.5)}to{color:#ffd36b;border-color:#fbbf26;box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 0 40px -2px rgba(251,191,38,0.8)}}
+@keyframes f5line{from{box-shadow:0 0 14px rgba(142,168,255,0.7)}to{box-shadow:0 0 22px rgba(251,191,38,0.95)}}
+@media (prefers-reduced-motion:reduce){.flow5.go.done .f5-ic,.flow5.go.done .f5-fill{animation:none}}
+@media (max-width:760px){
+  .flow5{margin-top:40px}
+  .f5-list{grid-template-columns:1fr;row-gap:26px}
+  .f5-step{flex-direction:row;text-align:left;align-items:center;gap:18px;padding:0}
+  .f5-ic{width:64px;height:64px;flex:none}
+  .f5-ic svg{width:28px;height:28px}
+  .f5-txt{align-items:flex-start}
+  .f5-t{font-size:17px;max-width:none}
+  .f5-line{left:31px;right:auto;top:32px;bottom:32px;width:2px;height:auto}
+  .f5-fill{transform-origin:top center}
+  .flow5.armed .f5-fill{transform:scaleY(0)}
+  .flow5.go .f5-fill{transform:scaleY(1)}
+}
+
+.field label{display:block;font-size:14px;margin-bottom:8px;color:#EFEFEF}
+.field input{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(10,10,14,0.55);color:#EFEFEF;font-size:15px;font-family:inherit}
+.field input::placeholder{color:#8c92a6}
+.field select.select-cascade{width:100%;min-height:48px;padding:0 42px 0 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(10,10,14,0.55) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 14px center;background-size:16px;color:#EFEFEF;font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none;cursor:pointer}
+.field select.select-cascade:invalid,.field select.select-cascade option[value=""]{color:#8c92a6}
+.field select.select-cascade option{background:#13162a;color:#EFEFEF}
+
+/* catálogo de produtos (acordeão por segmento) */
+.plist{border-radius:18px;overflow:hidden;interpolate-size:allow-keywords}
+.plist::details-content{block-size:0;opacity:0;overflow:clip;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+.plist[open]::details-content{block-size:auto;opacity:1}
+.plist summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px}
+.plist summary::-webkit-details-marker{display:none}
+.plist summary .pl-left{display:flex;align-items:center;gap:16px}
+.plist summary .pl-num{font-size:14px;color:#fbbf26;letter-spacing:0.08em}
+.plist summary .pl-title{font-size:21px;font-weight:500}
+.plist summary .pl-count{font-size:13px;color:#a9afc2}
+.plist summary .pl-chev{flex:none;width:34px;height:34px;border-radius:9px;border:1px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;transition:transform .25s ease}
+.plist[open] summary .pl-chev{transform:rotate(180deg)}
+.plist .pl-body{padding:0 26px 26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:10px 18px}
+.plist .pl-body span{position:relative;padding-left:16px;color:#dbe0f2;font-size:15px;line-height:1.5}
+.plist .pl-body span::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#fbbf26}
+.navgroup a{color:#EFEFEF;text-decoration:none;font-size:14px;padding:9px 16px;border-radius:9px;display:inline-flex;align-items:center;min-height:40px}
+@media (hover:hover) and (pointer:fine){.navgroup a:hover{background:rgba(255,255,255,0.08);color:#EFEFEF}}
+
+.wa{position:fixed;right:24px;bottom:84px;z-index:60;display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;text-decoration:none;color:#fff;background:linear-gradient(160deg,#25D366,#128c4a);border:1px solid rgba(255,255,255,0.4);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),0 18px 40px -10px rgba(37,211,102,0.6)}
+@media (hover:hover) and (pointer:fine){.wa:hover{color:#fff}}
+.wa::before{content:"";position:absolute;inset:-1px;border-radius:50%;border:2px solid rgba(37,211,102,0.6);pointer-events:none;animation:waring 2.6s var(--ease-out) infinite}
+@keyframes waring{0%{transform:scale(1);opacity:0.7}70%,100%{transform:scale(1.5);opacity:0}}
+@media (max-width:760px){.bignum{font-size:118px!important;right:16px;bottom:12px}.bignum.long{font-size:86px!important}.hide-sm{display:none}.org-h{display:none}.gtitle{text-align:left}.sec-img{width:80%;opacity:0.7}}
+
+/* ===== MOVIMENTO ===== */
+@keyframes rv{from{opacity:0;transform:translateY(44px) scale(0.98)}to{opacity:1;transform:none}}
+@keyframes rvl{from{opacity:0;transform:translateX(-70px)}to{opacity:1;transform:none}}
+@keyframes bigIn{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+  .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 4% entry 42%}
+  .rvl{animation:rvl linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .ncard .bignum{animation:bigIn linear both;animation-timeline:view();animation-range:entry 10% entry 70%}
+}
+@keyframes heroA{from{opacity:0;transform:translateY(26px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes heroB{from{opacity:0;transform:translateY(26px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes drift{from{translate:0 0}to{translate:46px -34px}}
+@keyframes breathe{from{scale:1;opacity:0.78}to{scale:1.06;opacity:1}}
+@keyframes shardglow{from{opacity:0.62}to{opacity:1}}
+@keyframes lineflow{from{background-position:0 0}to{background-position:200% 0}}
+.aura{animation:drift 18s ease-in-out infinite alternate}
+.aura-y{animation-duration:23s;animation-direction:alternate-reverse}
+.aura-m{animation-duration:27s}
+.cone{animation:breathe 9s ease-in-out infinite alternate;transform-origin:50% 0;filter:brightness(1.1)}
+.shard{filter:brightness(1.14);animation:shardglow 4.5s ease-in-out infinite alternate,sway 8s ease-in-out infinite alternate}
+.shard:nth-child(1){animation-duration:5.2s,9s}
+.shard:nth-child(2){animation-duration:4.2s,7.4s}
+.shard:nth-child(3){animation-duration:4.8s,10s}
+.shard:nth-child(4){animation-duration:4.8s,10s;animation-direction:alternate,alternate-reverse}
+.shard:nth-child(5){animation-duration:4.2s,7.4s;animation-direction:alternate,alternate-reverse}
+.shard:nth-child(6){animation-duration:5.2s,9s;animation-direction:alternate,alternate-reverse}
+@keyframes sway{from{translate:-16px 0}to{translate:18px 0}}
+@keyframes sheenX{0%{translate:0 0}42%,100%{translate:300% 0}}
+.shard::after{content:"";position:absolute;top:0;bottom:0;left:-130%;width:130%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0) 66%,rgba(255,255,255,0) 100%);animation:sheenX 6s ease-in-out infinite}
+.shard:nth-child(1)::after{animation-delay:-0.5s}
+.shard:nth-child(2)::after{animation-delay:-1.4s}
+.shard:nth-child(3)::after{animation-delay:-2.3s}
+.shard:nth-child(4)::after{animation-delay:-3.2s}
+.shard:nth-child(5)::after{animation-delay:-4.1s}
+.shard:nth-child(6)::after{animation-delay:-5s}
+.horizon::after{background-size:200% 100%;animation:lineflow 6s linear infinite}
+.svc,.sec,.ncard,.logo-tile{transition:translate .25s var(--ease-out),box-shadow .25s ease,border-color .25s ease}
+@media (hover:hover) and (pointer:fine){.svc:hover,.sec:hover,.ncard:hover{translate:0 -7px;border-color:rgba(251,191,38,0.4);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 0 rgba(142,168,255,0.55),0 44px 90px -30px rgba(51,84,161,0.85)}}
+@media (hover:hover) and (pointer:fine){.logo-tile:hover{translate:0 -5px;box-shadow:0 24px 50px -20px rgba(0,0,0,0.9),0 0 40px -6px rgba(251,191,38,0.55)}}
+.sec-img{transition:scale .5s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.sec:hover .sec-img{scale:1.07}}
+.bignum,.ghost{transition:translate .6s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.ncard:hover .bignum,.sec:hover .ghost{translate:-10px -10px}}
+.more span{display:inline-block;transition:translate .25s ease}
+@media (hover:hover) and (pointer:fine){.more:hover span{translate:4px 0}}
+.btn-primary .dot svg{transition:translate .25s ease}
+@media (hover:hover) and (pointer:fine){.btn-primary:hover .dot svg{translate:4px 0}}
+.btn-primary,.btn-ghost,.more,.icon-link,.fx-ptax,.wa{transition:background .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,scale 160ms var(--ease-out)}
+.btn-primary:active,.btn-ghost:active,.more:active,.fx-ptax:active{scale:0.97}
+.icon-link:active,.wa:active{scale:0.95}
+.lbar{transition:translate .3s ease,box-shadow .3s ease}
+/* movimento reduzido: sem deslocamentos nem loops, mantém só fades e cores curtos */
+@media (prefers-reduced-motion:reduce){
+  .aura,.cone,.shard,.shard::after,.horizon::after,.wa::before{animation:none!important}
+  *,*::before,*::after{transition-property:opacity,color,background-color,border-color!important;transition-duration:150ms!important}
+  *,*::before,*::after{translate:none!important;scale:none!important}
+  .rv,.rvl,.ncard .bignum{animation-name:rvfade!important}
+  @keyframes rvfade{from{opacity:0}to{opacity:1}}
+  @keyframes heroA{from{opacity:0}to{opacity:1}}
+  @keyframes heroB{from{opacity:0}to{opacity:1}}
+}
+
+
+/* ===== ESCADA: entrada em sequência ===== */
+@media (prefers-reduced-motion:reduce){.fvideo{display:none}}
+
+/* ===== ORGANOGRAMA: movimento ===== */
+.org-n{transition:opacity .8s ease,transform .8s var(--ease-out)}
+.org-n.pre{opacity:0;transform:translateY(34px) scale(0.96)}
+
+/* ===== TRABALHE CONOSCO ===== */
+.filebtn{position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:0 16px;border-radius:12px;border:1px dashed rgba(251,191,38,0.65);background:rgba(10,10,14,0.55);color:#EFEFEF;font-size:15px;cursor:pointer}
+@media (hover:hover) and (pointer:fine){.filebtn:hover{border-color:#fbbf26}}
+.filebtn:focus-within{outline:2px solid #fbbf26;outline-offset:2px}
+.filebtn input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+
+body{font-family:'Acumin Pro','Hanken Grotesk',system-ui,sans-serif}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* menu no celular */
+.menubtn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);background:rgba(10,10,14,0.5);color:#EFEFEF;cursor:pointer}
+/* seletor de idioma */
+.langsw{display:flex;gap:2px;padding:3px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:rgba(10,10,14,0.5)}
+.langsw button{min-width:32px;min-height:34px;padding:0 6px;border:0;background:transparent;color:#aab0c4;font-size:12px;font-weight:700;letter-spacing:0.02em;border-radius:7px;cursor:pointer;font-family:inherit}
+@media (hover:hover) and (pointer:fine){.langsw button:hover{color:#EFEFEF}}
+.langsw button[aria-pressed="true"]{background:#fbbf26;color:#13162a}
+@media (max-width:1280px){
+  .menubtn{display:inline-flex;order:4}
+  .icon-link{display:none!important}
+  .hdr-mid,.hdr-right{display:contents!important}
+  #mnav{display:none!important;order:5;width:100%;flex-direction:column!important;align-items:stretch!important;opacity:0;transform:translateY(-8px) scale(0.97);transform-origin:top right;transition:opacity 150ms ease-out,transform 150ms var(--ease-out),display 150ms allow-discrete}
+  #mnav.open{display:flex!important;opacity:1;transform:none;transition:opacity 180ms ease-out,transform 220ms var(--ease-out),display 220ms allow-discrete}
+  @starting-style{#mnav.open{opacity:0;transform:translateY(-8px) scale(0.97)}}
+  .hdr-logo{height:30px!important}
+  .hdr-cta{order:3;min-height:44px;padding:0 5px 0 14px;font-size:14px;gap:8px}
+  .hdr-cta .dot{width:32px;height:32px}
+  #mnav a{width:100%;justify-content:flex-start}
+  .langsw{order:2}
+  .fx{order:1;margin-left:auto}
+  .hdr-break{display:block;order:1;flex-basis:100%;height:0}
+}
+@media (max-width:760px){.fx-d{display:none}.fx-usd{padding:0 10px;gap:6px}.fx-ptax{padding:0 10px}}
+@media (min-width:1281px){.hdr-bar{flex-wrap:nowrap!important}}
+/* movimento: microtransições, toque, cabeçalho, cookies, envio */
+.navgroup a{transition:background-color 150ms ease,color 150ms ease,box-shadow 150ms ease}
+.langsw button,.menubtn{transition:background-color 150ms ease,color 150ms ease,scale 160ms var(--ease-out)}
+.langsw button:active,.menubtn:active{scale:0.95}
+.menubtn svg g{transform-box:fill-box;transform-origin:center;transition:opacity 180ms ease,transform 220ms var(--ease-out)}
+.menubtn .mb-x{opacity:0;transform:rotate(-90deg) scale(0.8)}
+.menubtn[aria-expanded="true"] .mb-burger{opacity:0;transform:rotate(90deg) scale(0.8)}
+.menubtn[aria-expanded="true"] .mb-x{opacity:1;transform:none}
+.hdr-outer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0.92),rgba(0,0,0,0.8));-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transition:opacity 200ms ease}
+.hdr-outer.scrolled::before{opacity:1}
+.ckb{transition:opacity 250ms ease-out,transform 300ms var(--ease-out)}
+@starting-style{.ckb{opacity:0;transform:translateY(16px)}}
+.ckb.out{opacity:0;transform:translateY(12px);transition-duration:180ms;pointer-events:none}
+.ckb button{transition:scale 160ms var(--ease-out),background-color 150ms ease}
+.ckb button:active{scale:0.97}
+.btn-primary.is-sending{pointer-events:none;scale:0.98}
+.btn-primary.is-sending .dot svg{display:none}
+.btn-primary.is-sending .dot::after{content:"";width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:fzspin 700ms linear infinite}
+@keyframes fzspin{to{transform:rotate(1turn)}}
+@media (prefers-reduced-motion:reduce){.btn-primary.is-sending .dot::after{animation:none;border-right-color:currentColor;opacity:0.6}}
+.is-off .aura,.is-off .cone,.is-off .shard,.is-off .shard::after,.is-off .horizon::after,.is-off .f5-ic,.is-off .f5-fill{animation-play-state:paused}
+@media (min-width:1281px) and (max-width:1400px){.fx-d{display:none}.navgroup a{padding:9px 11px}.hdr-right{gap:8px!important}.langsw button{min-width:30px}.icon-link{width:40px;height:40px}.fx-usd,.fx-ptax{padding:0 10px}.hdr-cta{padding-left:16px}}
+.hdr-cta{white-space:nowrap}
+@media (max-width:360px){.hdr-outer{padding-left:14px!important;padding-right:14px!important}.fx-ptax svg{display:none}.hdr-bar{gap:10px!important}}
+@media (max-width:400px){.hdr-cta{padding:0 4px 0 12px;font-size:13px;gap:6px}.hdr-cta .dot{width:30px;height:30px}.langsw button{min-width:28px;padding:0 4px}}
+/* aviso de cookies */
+.ckb{font-family:'Acumin Pro','Hanken Grotesk',system-ui,sans-serif;position:fixed;left:24px;bottom:24px;z-index:70;max-width:420px;padding:20px 22px;border-radius:18px;font-size:14px;line-height:1.5;color:#dfe3f0;background:linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.01) 40%),rgba(12,13,20,0.92);border:1px solid rgba(255,255,255,0.12);box-shadow:0 30px 70px -30px #000;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.ckb a{color:#fbbf26}
+.ckb .row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.ckb button{min-height:42px;padding:0 18px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,0.25);background:transparent;color:#EFEFEF}
+.ckb button.ok{background:#fbbf26;color:#13162a;border-color:#fbbf26}
+@media (max-width:760px){.ckb{left:12px;right:12px;bottom:160px;max-width:none}}
+.field input:invalid:not(:placeholder-shown){border-color:rgba(255,120,120,0.7)}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager noscript (desativado). Para ativar: troque GTM-XXXXXXX e apague a linha INICIO-COMENTARIO-NS e a linha FIM-COMENTARIO-NS. -->
+<!-- INICIO-COMENTARIO-NS
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+FIM-COMENTARIO-NS -->
+<div style="background:#000;color:#EFEFEF;font-family:'Acumin Pro','Hanken Grotesk',system-ui,sans-serif;line-height:1.5;position:relative;overflow-x:clip">
+
+<!-- MENU -->
+<div class="hdr-outer" style="position:sticky;top:0;z-index:30;padding:14px 24px;background:linear-gradient(180deg,rgba(0,0,0,0.75),rgba(0,0,0,0));">
+<div class="hdr-bar" style="max-width:1360px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+<a href="#inicio" aria-label="Fuzza Trade" style="display:flex;align-items:center;min-height:44px"><img src="assets/w_fuzza.png" alt="Fuzza Trade" class="hdr-logo" style="height:38px;width:auto;display:block"></a>
+<div class="hdr-mid" style="display:flex;align-items:center;gap:12px">
+<div class="glass navgroup" id="mnav" style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:4px;border-radius:12px">
+<a href="#inicio" data-nav="inicio" data-i18n="nav_inicio">Início</a>
+<a href="#sobre" data-nav="sobre" data-i18n="nav_sobre">Sobre</a>
+<a href="#servicos" data-nav="servicos" data-i18n="nav_servicos">Serviços</a>
+<a href="#catalogos" data-nav="catalogos" data-i18n="nav_catalogos">Segmentos</a>
+<a href="#trabalhe" data-nav="trabalhe" data-i18n="nav_trabalhe">Trabalhe conosco</a>
+
+</div>
+<a class="btn-primary hdr-cta" href="#contato"><span data-i18n="nav_cta">Fale conosco</span> <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<button type="button" class="menubtn" id="menubtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><g class="mb-burger"><path d="M4 7h16M4 12h16M4 17h16"></path></g><g class="mb-x"><path d="M6 6l12 12M18 6L6 18"></path></g></svg></button>
+</div>
+<div class="hdr-right" style="display:flex;align-items:center;gap:10px">
+<div class="langsw" id="langsw" role="group" aria-label="Idioma do site"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+<a class="icon-link" href="https://www.instagram.com/fuzzatrade/" aria-label="Instagram da Fuzza Trade"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a>
+<a class="icon-link" href="https://www.linkedin.com/company/70128639/" aria-label="LinkedIn da Fuzza Trade"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><line x1="8" y1="10.5" x2="8" y2="16.5"></line><circle cx="8" cy="7.7" r="0.8" fill="currentColor"></circle><path d="M12 16.5v-6m0 3c0-1.7 1.2-3 2.8-3s2.2 1.1 2.2 3v3"></path></svg></a>
+<div class="fx" id="fx">
+<div class="fx-usd" id="fx-usd" role="status" aria-label="Dólar comercial agora" data-i18n-aria="fx_aria"><span class="fx-l">USD</span><span class="fx-v" id="fx-v">R$ --</span><span class="fx-d" id="fx-d"></span></div>
+<a class="fx-ptax" href="https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes" target="_blank" rel="noopener noreferrer" aria-label="Consultar a PTAX no Banco Central" data-i18n-aria="ptax_aria">PTAX<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+<span class="hdr-break" aria-hidden="true"></span>
+</div>
+</div>
+
+<!-- 1. HERO -->
+<section id="inicio" style="position:relative;overflow:hidden;margin-top:-76px;padding:190px 24px 150px;min-height:820px;background:#000">
+<div class="cone" style="top:0;left:50%;width:1100px;height:900px;margin-left:-550px"></div>
+<div class="aura aura-m" style="top:260px;left:50%;width:1000px;height:560px;margin-left:-500px;opacity:0.55"></div>
+<div class="aura" style="bottom:-260px;left:-300px;width:900px;height:620px;opacity:0.7"></div>
+<div class="aura aura-y" style="bottom:-300px;right:-260px;width:760px;height:560px;opacity:0.35"></div>
+<div class="grid-bg"></div>
+<div class="hide-sm" style="position:absolute;left:0;right:0;bottom:0;height:520px;pointer-events:none">
+<div class="shard l" style="left:calc(50% - 470px);opacity:0.35;height:330px"></div>
+<div class="shard l" style="left:calc(50% - 380px);opacity:0.6;height:390px"></div>
+<div class="shard l" style="left:calc(50% - 290px);opacity:0.9"></div>
+<div class="shard r" style="left:calc(50% + 226px);opacity:0.9"></div>
+<div class="shard r" style="left:calc(50% + 316px);opacity:0.6;height:390px"></div>
+<div class="shard r" style="left:calc(50% + 406px);opacity:0.35;height:330px"></div>
+</div>
+<div class="horizon"></div>
+<svg class="corner hide-sm" style="top:150px;left:64px" viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M1 0V89H90" stroke="#fbbf26" stroke-opacity="0.75" stroke-width="2"></path></svg>
+<svg class="corner hide-sm" style="bottom:150px;right:64px" viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M0 1H89V90" stroke="#fbbf26" stroke-opacity="0.75" stroke-width="2"></path></svg>
+
+<div style="position:relative;max-width:920px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px">
+<span class="chip hero-el" style="animation:heroA .8s var(--ease-out) both"><span id="h-kicker">Importação e exportação</span> <b id="h-badge">Fuzza</b></span>
+<h1 class="hero-el" style="margin:0;font-size:clamp(40px,6.4vw,84px);line-height:1.02;font-weight:400;letter-spacing:-0.03em;min-height:2.05em;text-shadow:0 0 70px rgba(0,0,0,0.9);animation:heroA .8s var(--ease-out) .08s both"><span id="h-t1">Do pedido ao estoque, com </span><span id="h-hi" style="background:linear-gradient(90deg,#ffe8a6,#fbbf26);-webkit-background-clip:text;background-clip:text;color:transparent">processo</span><span id="h-t2"> e inspeção.</span></h1>
+<p class="hero-el" id="h-sub" style="margin:0;max-width:640px;font-size:18px;color:#eceef7;font-weight:400;padding:14px 26px;border-radius:14px;background:rgba(5,7,14,0.82);border:1px solid rgba(255,255,255,0.1);box-shadow:0 22px 50px -22px #000;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:heroA .8s var(--ease-out) .16s both">Importe com previsibilidade, da fábrica ao seu armazém.</p>
+<div class="hero-el" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;animation:heroA .8s var(--ease-out) .24s both">
+<a class="btn-primary" href="#contato"><span id="h-cta">Solicite uma cotação</span> <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a class="btn-ghost" href="#servicos" data-i18n="hero_ghost">Conheça os serviços</a>
+</div>
+<div style="display:flex;align-items:center;gap:6px;margin-top:24px">
+<button type="button" aria-label="Slide anterior" id="hprev" style="width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:rgba(10,10,14,0.5);color:#EFEFEF;cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" class="dotbtn" data-i="0" aria-label="Ir para o slide 1" style="height:44px;padding:0 5px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center"><span style="display:block;height:6px;border-radius:999px;width:10px;background:rgba(239,239,239,0.35)"></span></button>
+<button type="button" class="dotbtn" data-i="1" aria-label="Ir para o slide 2" style="height:44px;padding:0 5px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center"><span style="display:block;height:6px;border-radius:999px;width:10px;background:rgba(239,239,239,0.35)"></span></button>
+<button type="button" class="dotbtn" data-i="2" aria-label="Ir para o slide 3" style="height:44px;padding:0 5px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center"><span style="display:block;height:6px;border-radius:999px;width:10px;background:rgba(239,239,239,0.35)"></span></button>
+
+<button type="button" aria-label="Próximo slide" id="hnext" style="width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:rgba(10,10,14,0.5);color:#EFEFEF;cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</section>
+
+<!-- 2. SOBRE + NÚMEROS -->
+<section id="sobre" style="position:relative;padding:110px 0 110px">
+<div class="cone" style="top:0;left:30%;width:800px;height:700px;margin-left:-400px;opacity:0.7"></div>
+<div class="aura" style="top:300px;right:-320px;width:760px;height:620px;opacity:0.45"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec01_kicker">Sobre a Fuzza</span><span class="n">01</span></div>
+<h2 class="gtitle" data-i18n="sec01_title">Importar bem é o que importa. Há mais de 15 anos conectando empresas ao mundo.</h2>
+</div>
+<p style="margin:0 0 44px;max-width:760px;color:#c4c9da;font-size:18px;font-weight:300" data-i18n="sec01_body">Importar ou exportar sem surpresas: é isso que a Fuzza Trade entrega. Cuidamos de toda a operação, do fornecedor ao seu estoque, com escritório em Hong Kong e um time em Rio Claro/SP acompanhando cada etapa.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:22px">
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(251,191,38,0.2),rgba(251,191,38,0) 65%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(251,191,38,0.18)" fill="none"></path></svg>
+<span class="badge" style="color:#fbbf26">1</span>
+<span class="tag" style="color:#fbbf26"><i class="dia"></i><span data-i18n="num1_tag">Experiência</span></span>
+<span class="bignum n-gold cnt" data-to="15" aria-hidden="true">15+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num1_title">Anos de mercado</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num1_desc">Mais de 15 anos em importação e exportação</div>
+</div>
+</div>
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(51,84,161,0.35),rgba(51,84,161,0) 65%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(142,168,255,0.22)" fill="none"></path></svg>
+<span class="badge" style="color:#a0b6ff">2</span>
+<span class="tag" style="color:#a0b6ff"><i class="dia"></i><i class="dia"></i><span data-i18n="num2_tag">Volume</span></span>
+<span class="bignum n-blue cnt" data-to="500" aria-hidden="true">500+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num2_title">Contêineres por ano</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num2_desc">Movimentados em operações de comércio exterior</div>
+</div>
+</div>
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(239,239,239,0.12),rgba(239,239,239,0) 65%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(239,239,239,0.16)" fill="none"></path></svg>
+<span class="badge" style="color:#EFEFEF">3</span>
+<span class="tag" style="color:#EFEFEF"><i class="dia"></i><i class="dia"></i><i class="dia"></i><span data-i18n="num3_tag">Alcance</span></span>
+<span class="bignum n-silver cnt" data-to="14" aria-hidden="true">14+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num3_title">Países parceiros</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num3_desc">Fornecedores e clientes em diferentes mercados</div>
+</div>
+</div>
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(251,191,38,0.16),rgba(51,84,161,0.12) 45%,rgba(51,84,161,0) 70%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(251,191,38,0.16)" fill="none"></path></svg>
+<span class="badge" style="color:#fbbf26">4</span>
+<span class="tag" style="color:#fbbf26"><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><span data-i18n="num4_tag">Portfólio</span></span>
+<span class="bignum long n-mix cnt" data-to="1000" aria-hidden="true">1000+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num4_title">Produtos no catálogo</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num4_desc">Insumos e produtos para indústria e varejo</div>
+</div>
+</div>
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(142,168,255,0.28),rgba(51,84,161,0) 65%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(142,168,255,0.22)" fill="none"></path></svg>
+<span class="badge" style="color:#a0b6ff">5</span>
+<span class="tag" style="color:#a0b6ff"><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><span data-i18n="num5_tag">Base</span></span>
+<span class="bignum long n-blue cnt" data-to="1000" aria-hidden="true">1000+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num5_title">Clientes atendidos</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num5_desc">Empresas que já compraram com a Fuzza</div>
+</div>
+</div>
+
+<div class="glass ncard rv" style="background:radial-gradient(70% 90% at 0% 40%,rgba(251,191,38,0.2),rgba(251,191,38,0) 65%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0) 40%),rgba(14,15,22,0.6)">
+<svg class="circuit" viewBox="0 0 560 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 230 L260 140 H420 L470 90 H560" stroke="rgba(255,255,255,0.09)" fill="none"></path><path d="M120 270 L250 170 H400" stroke="rgba(251,191,38,0.18)" fill="none"></path></svg>
+<span class="badge" style="color:#fbbf26">6</span>
+<span class="tag" style="color:#fbbf26"><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><i class="dia"></i><span data-i18n="num6_tag">Time</span></span>
+<span class="bignum n-gold cnt" data-to="40" aria-hidden="true">40+</span>
+<div style="margin-top:auto;position:relative">
+<div style="font-size:28px;font-weight:400" data-i18n="num6_title">Funcionários</div>
+<div style="font-size:14px;color:#a9afc2;margin-top:2px" data-i18n="num6_desc">Time dedicado a cada etapa da operação</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 3. SERVIÇOS -->
+<section id="servicos" style="position:relative;padding:60px 0 110px">
+<div class="aura aura-m" style="top:120px;left:-360px;width:820px;height:620px;opacity:0.35"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec02_kicker">Nossos serviços</span><span class="n">02</span></div>
+<h2 class="gtitle" data-i18n="sec02_title">Importação, exportação e inspeção em um só parceiro.</h2>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:22px">
+<div class="glass svc rv">
+<span class="badge" style="color:#fbbf26">1</span>
+<h3 data-i18n="svc1_title">Importação para empresas</h3>
+<p class="sub" data-i18n="svc1_sub">Com radar ou sem radar</p>
+<p class="txt" data-i18n="svc1_txt">Com radar, a empresa compra direto pela Scala e reduz a carga tributária. Sem radar, a Fuzza importa em seu nome. Nos dois casos, cuidamos do processo do pedido ao estoque.</p>
+<div style="margin-top:auto;padding-top:14px"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Importa%C3%A7%C3%A3o%20para%20empresas." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_svc1" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div>
+</div>
+<div class="glass warm svc rv">
+<span class="badge" style="color:#fbbf26">2</span>
+<h3 data-i18n="svc2_title">Exportação</h3>
+<p class="sub" data-i18n="svc2_sub">Leve a sua indústria para o mundo</p>
+<p class="txt" data-i18n="svc2_txt">Buscamos compradores no exterior, negociamos e estruturamos logística e conformidade. Sua empresa usa a capacidade produtiva que já tem para vender para fora.</p>
+<div style="margin-top:auto;padding-top:14px"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Exporta%C3%A7%C3%A3o." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_svc2" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div>
+</div>
+<div class="glass svc rv">
+<span class="badge" style="color:#fbbf26">3</span>
+<h3 data-i18n="svc3_title">Fábrica Verificada</h3>
+<p class="sub" data-i18n="svc3_sub">Sourcing e inspeção de fornecedores na Ásia</p>
+<p class="txt" data-i18n="svc3_txt">Encontramos fornecedores e verificamos a fábrica antes de você fechar o pedido, com o apoio do nosso escritório em Hong Kong.</p>
+<div style="margin-top:auto;padding-top:14px"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20F%C3%A1brica%20Verificada." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_svc3" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div>
+</div>
+<div class="glass warm svc rv">
+<span class="badge" style="color:#fbbf26">4</span>
+<h3 data-i18n="svc4_title">Importação Blindada</h3>
+<p class="sub" data-i18n="svc4_sub">Consultoria especializada em importação</p>
+<p class="txt" data-i18n="svc4_txt">Estruturamos a importação da sua empresa com mentoria na primeira operação e revisão de processos, com treinamento para o seu time.</p>
+<div style="margin-top:auto;padding-top:14px"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Importa%C3%A7%C3%A3o%20Blindada." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_svc4" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div>
+</div>
+<div class="glass svc rv">
+<span class="badge" style="color:#fbbf26">5</span>
+<h3 data-i18n="svc5_title">Brand Lab</h3>
+<p class="sub" data-i18n="svc5_sub">Desenvolvimento de marcas próprias</p>
+<p class="txt" data-i18n="svc5_txt">Desenvolvemos produtos e marcas próprias para lojistas, do conceito à produção, com a estrutura de importação já pronta.</p>
+<div style="margin-top:auto;padding-top:14px"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Brand%20Lab." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_svc5" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3.5 CATÁLOGO DE PRODUTOS -->
+<section style="position:relative;padding:20px 0 110px">
+<div class="aura" style="top:160px;right:-320px;width:760px;height:600px;opacity:0.3"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="cat_kicker">Catálogo</span><span class="n">03</span></div>
+<h2 class="gtitle" data-i18n="cat_title">Veja o que já importamos para o seu segmento.</h2>
+</div>
+<p style="margin:0 0 36px;max-width:720px;color:#c4c9da;font-size:17px;font-weight:300" data-i18n="cat_intro">Clique em um segmento para ver uma amostra dos produtos que já movimentamos. A lista completa é maior, consulte a Fuzza para o seu caso.</p>
+<div style="display:flex;flex-direction:column;gap:16px">
+
+<details class="glass plist rv">
+<summary><span class="pl-left"><span class="pl-num">01</span><span class="pl-title" data-i18n="seg1_title">Cerâmica</span></span><span class="pl-chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+<div class="pl-body">
+<span>Alumina calcinada fina</span><span>Alumina calcinada grossa</span><span>Esfera de alta alumina</span><span>Carbonato de bário</span><span>Hexametafosfato de sódio</span><span>Tripolifosfato de sódio</span><span>Hidroboracita</span><span>Ulexita calcinada</span><span>Silicato de zircônio micronizado</span><span>Farinha de zircônio</span><span>Areia de zircônio</span><span>Pigmentos cerâmicos</span><span>Tintas digitais para cerâmica</span><span>Chamote 325</span><span>Rebolos e ferramentas de retífica</span><span>Discos e bisélos de corte</span><span>Feltros e escovas de polimento</span><span>Abrasivos diamantados</span>
+</div>
+</details>
+
+<details class="glass warm plist rv">
+<summary><span class="pl-left"><span class="pl-num">02</span><span class="pl-title" data-i18n="seg2_title">Industrial</span></span><span class="pl-chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+<div class="pl-body">
+<span>Pregos anelados em bobina</span><span>Pregos espiral em bobina</span><span>Pregadeiras pneumáticas</span><span>Grampos industriais</span><span>Masterbatch para plásticos</span>
+</div>
+</details>
+
+<details class="glass plist rv">
+<summary><span class="pl-left"><span class="pl-num">03</span><span class="pl-title" data-i18n="seg3_title">Casa</span></span><span class="pl-chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+<div class="pl-body">
+<span>Potes de vidro borossilicato</span><span>Copo Diamond</span><span>Chaleira elétrica</span><span>Panelas (linha Flavor Cook)</span><span>Cubas e bacias sanitárias (Kazza Bath)</span><span>Taças e utilidades de mesa</span>
+</div>
+</details>
+
+<details class="glass warm plist rv">
+<summary><span class="pl-left"><span class="pl-num">04</span><span class="pl-title" data-i18n="seg4_title">Construção e acabamento</span></span><span class="pl-chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+<div class="pl-body">
+<span>Piso vinílico SPC (Coleção Brasilidades)</span><span>Rodapés</span><span>Cadeiras de escritório (Kazza Office)</span><span>Luvas e EPIs</span>
+</div>
+</details>
+
+<details class="glass plist rv">
+<summary><span class="pl-left"><span class="pl-num">05</span><span class="pl-title" data-i18n="seg5_title">Equipamentos</span></span><span class="pl-chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+<div class="pl-body">
+<span>Empilhadeiras elétricas (Fuzzion)</span>
+</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- 4. COMO FUNCIONA -->
+<section style="position:relative;padding:60px 0 120px">
+<div class="cone" style="top:0;left:50%;width:900px;height:760px;margin-left:-450px"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec03_kicker">Como funciona</span><span class="n">04</span></div>
+<h2 class="gtitle" data-i18n="sec03_title">Cuidamos de todas as etapas!</h2>
+</div>
+<div class="flow5" id="flow5">
+<div class="f5-line" aria-hidden="true"><i class="f5-fill"></i></div>
+<ol class="f5-list">
+<li class="f5-step" style="--i:0"><span class="f5-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9z"></path><path d="M8.6 13.2l2.2 2.2 4.6-4.6"></path></svg></span><span class="f5-txt"><span class="f5-n">01</span><span class="f5-t" data-i18n="tl1">Pedido</span></span></li>
+<li class="f5-step" style="--i:1"><span class="f5-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l6 3.5V11l6 3.5V4h5v17H3z"></path><path d="M7 18h2M12 18h2M17 18h1"></path></svg></span><span class="f5-txt"><span class="f5-n">02</span><span class="f5-t" data-i18n="tl2">Produção e inspeção</span></span></li>
+<li class="f5-step" style="--i:2"><span class="f5-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14l1.6-5h10.8L19 14H5z"></path><path d="M10 9V5h4v4"></path><path d="M2 18c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"></path></svg></span><span class="f5-txt"><span class="f5-n">03</span><span class="f5-t" data-i18n="tl3">Embarque e travessia</span></span></li>
+<li class="f5-step" style="--i:3"><span class="f5-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M8.8 12l2.3 2.3 4.2-4.4"></path></svg></span><span class="f5-txt"><span class="f5-n">04</span><span class="f5-t" data-i18n="tl4">Chegada e desembaraço</span></span></li>
+<li class="f5-step f5-last" style="--i:4"><span class="f5-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-6 9 6v10H3z"></path><path d="M9 20v-6h6v6"></path><path d="M3 10h18"></path></svg></span><span class="f5-txt"><span class="f5-n">05</span><span class="f5-t" data-i18n="tl5">No seu estoque</span></span></li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- 5. SETORES E PRODUTOS -->
+<section id="catalogos" style="position:relative;padding:60px 0 110px">
+<div class="aura" style="top:200px;right:-340px;width:820px;height:640px;opacity:0.45"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec04_kicker">Segmentos</span><span class="n">05</span></div>
+<h2 class="gtitle" data-i18n="sec04_title">Escolha seu segmento.</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:22px">
+<div class="glass sec rv"><img class="sec-img" src="assets/setor_ceramica_linha.jpg" alt=""><span class="ghost" aria-hidden="true">01</span><h3 style="margin:0;font-size:27px;font-weight:500;position:relative" data-i18n="seg1_title">Cerâmica</h3><p style="margin:0;color:#dbe0f2;position:relative;max-width:230px" data-i18n="seg1_desc">Insumos e matérias-primas para a indústria cerâmica.</p><div style="margin-top:auto;padding-top:16px;position:relative"><a class="more" href="https://wa.me/5519991555113?text=Ol%C3%A1%2C%20Luana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20produtos%20para%20Cer%C3%A2mica." target="_blank" rel="noopener" data-wa-phone="5519991555113" data-wa-key="wa_seg1" data-wa-name="Luana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div></div>
+<div class="glass sec rv"><img class="sec-img" src="assets/setor_industrial.jpg" alt=""><span class="ghost" aria-hidden="true">02</span><h3 style="margin:0;font-size:27px;font-weight:500;position:relative" data-i18n="seg2_title">Industrial</h3><p style="margin:0;color:#dbe0f2;position:relative;max-width:230px" data-i18n="seg2_desc">Produtos e componentes para a operação industrial.</p><div style="margin-top:auto;padding-top:16px;position:relative"><a class="more" href="https://wa.me/5519992863453?text=Ol%C3%A1%2C%20Adriana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20produtos%20Industriais." target="_blank" rel="noopener" data-wa-phone="5519992863453" data-wa-key="wa_seg2" data-wa-name="Adriana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div></div>
+<div class="glass sec rv"><img class="sec-img" src="assets/setor_casa.jpg" alt=""><span class="ghost" aria-hidden="true">03</span><h3 style="margin:0;font-size:27px;font-weight:500;position:relative" data-i18n="seg3_title">Casa</h3><p style="margin:0;color:#dbe0f2;position:relative;max-width:230px" data-i18n="seg3_desc">Itens para o dia a dia e a decoração do lar.</p><div style="margin-top:auto;padding-top:16px;position:relative"><a class="more" href="https://wa.me/5519993676712?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20produtos%20para%20Casa." target="_blank" rel="noopener" data-wa-phone="5519993676712" data-wa-key="wa_seg3" data-wa-name=""><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div></div>
+<div class="glass sec rv"><img class="sec-img" src="assets/setor_construcao.jpg" alt=""><span class="ghost" aria-hidden="true">04</span><h3 style="margin:0;font-size:27px;font-weight:500;position:relative;max-width:230px" data-i18n="seg4_title">Construção e acabamento</h3><p style="margin:0;color:#dbe0f2;position:relative;max-width:230px" data-i18n="seg4_desc">Pisos, revestimentos e materiais de obra.</p><div style="margin-top:auto;padding-top:16px;position:relative"><a class="more" href="https://wa.me/5519989868048?text=Ol%C3%A1%2C%20Adimari%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Constru%C3%A7%C3%A3o%20e%20acabamento." target="_blank" rel="noopener" data-wa-phone="5519989868048" data-wa-key="wa_seg4" data-wa-name="Adimari"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div></div>
+<div class="glass sec rv"><img class="sec-img" src="assets/setor_equipamentos.jpg" alt=""><span class="ghost" aria-hidden="true">05</span><h3 style="margin:0;font-size:27px;font-weight:500;position:relative" data-i18n="seg5_title">Equipamentos</h3><p style="margin:0;color:#dbe0f2;position:relative;max-width:230px" data-i18n="seg5_desc">Máquinas e empilhadeiras elétricas.</p><div style="margin-top:auto;padding-top:16px;position:relative"><a class="more" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20quero%20saber%20mais%20sobre%20Equipamentos." target="_blank" rel="noopener" data-wa-phone="5519994723962" data-wa-key="wa_seg5" data-wa-name="Luciana"><span data-i18n="btn_saiba_mais">Saiba mais</span> <span aria-hidden="true">»</span></a></div></div>
+</div>
+</div>
+</section>
+
+<!-- 6. PRESENÇA NA CHINA -->
+<section style="position:relative;padding:60px 0 110px">
+<div class="aura aura-y" style="top:120px;left:-300px;width:700px;height:560px;opacity:0.25"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar gold"><span data-i18n="sec05_kicker">Presença na China</span><span class="n">06</span></div>
+<h2 class="gtitle" data-i18n="sec05_title">Próximos dos fornecedores.</h2>
+</div>
+<div class="glass rv" style="display:flex;flex-wrap:wrap;overflow:hidden">
+<div style="flex:1 1 440px;min-height:400px;position:relative;overflow:hidden">
+<img src="assets/fabrica.jpg" alt="Equipe de inspeção em uma fábrica na China" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 55%,transparent 100%)">
+<video class="fvideo" src="assets/fabrica_loop.mp4" poster="assets/fabrica.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 55%,transparent 100%)"></video>
+</div>
+<div style="flex:1 1 440px;padding:44px;display:flex;flex-direction:column;gap:18px;justify-content:center">
+<p style="margin:0;color:#c4c9da;font-size:17px" data-i18n="china_body">Nosso escritório em Hong Kong aproxima a Fuzza das fábricas e acompanha cada pedido de perto.</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="lbar" style="min-width:0;display:flex"><span data-i18n="china1">Verificação da fábrica e da capacidade produtiva</span><span class="n">01</span></div>
+<div class="lbar" style="min-width:0;display:flex"><span data-i18n="china2">Conferência do produto antes do embarque</span><span class="n">02</span></div>
+<div class="lbar gold" style="min-width:0;display:flex"><span data-i18n="china3">Acompanhamento até a saída da fábrica</span><span class="n">03</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. CLIENTES -->
+<section style="position:relative;padding:60px 0 110px">
+<div class="cone" style="top:0;left:50%;width:900px;height:640px;margin-left:-450px;opacity:0.8"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec06_kicker">Nossos clientes</span><span class="n">07</span></div>
+<h2 class="gtitle" data-i18n="sec06_title">Empresas que confiam na Fuzza.</h2>
+</div>
+<div class="clients-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:18px">
+<div class="logo-tile feat rv"><img src="assets/logo_fabercastell.png" alt="Faber-Castell"></div>
+<div class="logo-tile feat rv"><img src="assets/logo_jussara.png" alt="Jussara"></div>
+<div class="logo-tile feat rv"><img src="assets/logo_rocha.png" alt="Rocha Porcelanato"></div>
+<div class="logo-tile feat rv"><img src="assets/logo_mohawk.png" alt="Mohawk Industries"></div>
+<div class="logo-tile rv"><img src="assets/logo_canuelas.png" alt="Cerâmica Cañuelas"></div>
+<div class="logo-tile rv"><img src="assets/logo_cedasa.png" alt="Cedasa Cerâmica"></div>
+<div class="logo-tile rv"><img src="assets/logo_cerronegro.png" alt="Cerro Negro"></div>
+<div class="logo-tile rv"><img src="assets/logo_cezan.jpg" alt="Cezan"></div>
+<div class="logo-tile rv"><img src="assets/logo_faboce.png" alt="Faboce"></div>
+<div class="logo-tile rv"><img src="assets/logo_incopisos.png" alt="Grupo Incopisos"></div>
+<div class="logo-tile rv"><img src="assets/logo_smalticeram.png" alt="Smalticeram"></div>
+<div class="logo-tile rv"><img src="assets/logo_quimpil_transp.png" alt="Quimpil Tintas e Vernizes"></div>
+<div class="logo-tile rv"><img src="assets/logo_dani.png" alt="Dani Pisos"></div>
+<div class="logo-tile rv"><img src="assets/logo_esmaltec.png" alt="Esmaltec"></div>
+<div class="logo-tile rv"><img src="assets/logo_formigres.png" alt="Grupo Formigres"></div>
+<div class="logo-tile rv"><img src="assets/logo_ibrac.png" alt="Ibrac Aditivos e Condimentos"></div>
+</div>
+</div>
+</section>
+
+<!-- 8. ECOSSISTEMA -->
+<section style="position:relative;padding:60px 0 120px">
+<div class="aura aura-m" style="top:260px;left:50%;width:900px;height:560px;margin-left:-450px;opacity:0.3"></div>
+<div class="wrap" style="position:relative">
+<div class="sec-head rv">
+<div class="lbar"><span data-i18n="sec07_kicker">Ecossistema</span><span class="n">08</span></div>
+<h2 class="gtitle" data-i18n="sec07_title">Um ecossistema pensado para o seu negócio.</h2>
+</div>
+
+<div class="org-pair" style="max-width:980px;margin:0 auto 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px">
+<div class="glass org-n rv" style="padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;text-align:left">
+<img src="assets/w_scala.png" alt="Scala Trading" style="height:46px;width:auto;max-width:100%;display:block">
+<span class="tag" style="position:static;color:#a0b6ff"><i class="dia"></i><span data-i18n="eco_scala_tag">Parceiro na China</span></span>
+<p style="margin:0;color:#c4c9da;font-size:15px" data-i18n="eco_scala">A Scala é a nossa empresa parceira na China, com escritório em Hong Kong. É ela quem faz o sourcing, a negociação e a inspeção junto aos fabricantes antes de qualquer contêiner sair da fábrica, garantindo preço, qualidade e prazo para o cliente da Fuzza.</p>
+</div>
+<div class="glass warm org-n rv" style="padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;text-align:left">
+<img src="assets/w_fuzza.png" alt="Fuzza Trade" style="height:46px;width:auto;max-width:100%;display:block">
+<span class="tag" style="position:static;color:#fbbf26"><i class="dia"></i><span data-i18n="eco_fuzza_tag">Importação e exportação</span></span>
+<p style="margin:0;color:#c4c9da;font-size:15px" data-i18n="eco_fuzza">A Fuzza Trade é a empresa que conduz a sua operação de importação e exportação, do pedido ao estoque. Ajuda o cliente a comprar e vender no exterior com segurança, e reúne as marcas Kazza Shop, Fuzzion e Fuzza Log.</p>
+</div>
+</div>
+
+<p style="margin:0 auto 22px;max-width:980px;text-align:center;color:#a9afc2;font-size:14px;letter-spacing:0.06em;text-transform:uppercase" data-i18n="eco_brands_label">Marcas da Fuzza Trade</p>
+
+<div class="org-wrap" style="max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px">
+
+<div class="glass org-n" style="padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;text-align:left">
+<img src="assets/w_kazza.png" alt="Kazza Shop" style="height:52px;width:auto;display:block">
+<p style="margin:0;color:#c4c9da;font-size:15px" data-i18n="eco_kazza">Nossa marca própria de produtos para casa, cozinha, banho, piso e escritório, vendida direto para o consumidor final. Ajuda o lojista e o cliente final a comprar com a confiança de quem importa direto, sem intermediário.</p>
+<a class="more" href="https://kazzashop.com.br"><span data-i18n="eco_btn_visit">Visitar a loja</span> <span aria-hidden="true">»</span></a>
+</div>
+
+<div class="glass warm org-n" style="padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;text-align:left">
+<img src="assets/w_fuzzion.png" alt="Fuzzion Empilhadeiras Elétricas" style="height:40px;width:auto;max-width:100%;display:block">
+<p style="margin:0;color:#c4c9da;font-size:15px" data-i18n="eco_fuzzion">Nossa marca própria de empilhadeiras elétricas, sem motor a combustão. Ajuda empresas que precisam de capacidade de movimentação na operação, com equipamento de preço competitivo e suporte local.</p>
+<a class="more" href="#contato"><span data-i18n="eco_btn_know">Conhecer</span> <span aria-hidden="true">»</span></a>
+</div>
+
+<div class="glass org-n" style="padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;text-align:left">
+<img src="assets/w_fuzzalog_v2.png" alt="Fuzza Log" style="height:46px;width:auto;display:block">
+<p style="margin:0;color:#c4c9da;font-size:15px" data-i18n="eco_fuzzalog">Nossa marca própria de logística e armazenagem. Ajuda o cliente a levar a carga do desembarque no Brasil até a porta do seu negócio, com acompanhamento em cada etapa do transporte.</p>
+<a class="more" href="#contato"><span data-i18n="eco_btn_know">Conhecer</span> <span aria-hidden="true">»</span></a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 9. CONTATO -->
+<section id="instagram" style="position:relative;overflow:hidden;padding:110px 24px 60px;background:#000">
+<div class="grid-bg"></div>
+<div style="position:relative;max-width:1100px;margin:0 auto">
+<div class="sec-head rv" style="margin-bottom:40px">
+<div class="lbar gold"><span data-i18n="sec_insta_kicker">Instagram</span><span class="n">09</span></div>
+<h2 class="gtitle" data-i18n="sec_insta_title">Acompanhe no Instagram</h2>
+</div>
+<div class="rv"><behold-widget feed-id="u4KDEr327tDM4TYH1nxR"></behold-widget></div>
+</div>
+<script>
+  (() => {
+    if(window.__bhldScript)return;window.__bhldScript=true;
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+  })();
+</script>
+</section>
+<section id="contato" style="position:relative;overflow:hidden;padding:110px 24px 130px;background:#000">
+<div class="cone" style="top:0;left:50%;width:1000px;height:760px;margin-left:-500px"></div>
+<div class="aura aura-y" style="bottom:-280px;right:-240px;width:700px;height:520px;opacity:0.3"></div>
+<div class="grid-bg"></div>
+<div class="horizon"></div>
+<div style="position:relative;max-width:900px;margin:0 auto">
+<div class="sec-head rv" style="margin-bottom:40px">
+<div class="lbar gold"><span data-i18n="sec08_kicker">Fale conosco</span><span class="n">10</span></div>
+<h2 class="gtitle" data-i18n="sec08_title">Vamos trabalhar juntos!</h2>
+</div>
+<form class="glass rv" name="contato" method="POST" action="/obrigado.html" data-netlify="true" netlify-honeypot="campo-extra" style="padding:36px">
+<input type="hidden" name="form-name" value="contato">
+<p style="display:none"><label>Não preencha este campo: <input name="campo-extra"></label></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+<div class="field"><label for="f-nome" data-i18n="lbl_nome">Nome</label><input id="f-nome" name="nome" required type="text" placeholder="Seu nome" data-i18n-ph="ph_nome"></div>
+<div class="field"><label for="f-empresa" data-i18n="lbl_empresa">Empresa</label><input id="f-empresa" name="empresa" type="text" placeholder="Nome da empresa" data-i18n-ph="ph_empresa"></div>
+<div class="field"><label for="f-email" data-i18n="lbl_email">E-mail</label><input id="f-email" name="email" required type="email" placeholder="voce@empresa.com.br" data-i18n-ph="ph_email"></div>
+<div class="field"><label for="f-whats" data-i18n="lbl_whats">WhatsApp</label><input id="f-whats" name="whatsapp" required type="text" placeholder="(00) 00000-0000" data-i18n-ph="ph_whats"></div>
+<div class="field"><label for="f-assunto" data-i18n="lbl_assunto">Assunto</label>
+<select id="f-assunto" name="assunto" class="select-cascade" required>
+<option value="" disabled selected data-i18n="opt_assunto0">Selecione o assunto</option>
+<option value="Importação" data-i18n="opt_assunto1">Importação</option>
+<option value="Exportação" data-i18n="opt_assunto2">Exportação</option>
+<option value="Cerâmica" data-i18n="seg1_title">Cerâmica</option>
+<option value="Industrial" data-i18n="seg2_title">Industrial</option>
+<option value="Casa" data-i18n="seg3_title">Casa</option>
+<option value="Construção e acabamento" data-i18n="seg4_title">Construção e acabamento</option>
+<option value="Equipamentos" data-i18n="seg5_title">Equipamentos</option>
+<option value="Outros" data-i18n="opt_assunto_outros">Outros</option>
+</select>
+</div>
+<div class="field" style="grid-column:1/-1"><label for="f-need" data-i18n="lbl_need">O que você precisa importar ou exportar?</label><input id="f-need" name="mensagem" required type="text" placeholder="Descreva o produto ou o serviço" data-i18n-ph="ph_need"></div>
+</div>
+<div style="margin-top:28px;display:flex;justify-content:center">
+<button type="submit" class="btn-primary"><span data-i18n="btn_enviar">Enviar</span> <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
+</div>
+<p style="margin:16px 0 0;text-align:center;font-size:13px;color:#a9afc2" data-i18n="form_trust">Sem compromisso. Em até 1 dia útil, um especialista responde você.</p>
+</form>
+</div>
+</section>
+
+<!-- 10. TRABALHE CONOSCO -->
+<section id="trabalhe" style="position:relative;overflow:hidden;padding:110px 24px 130px;background:#000">
+<div class="cone" style="top:0;left:50%;width:1000px;height:760px;margin-left:-500px"></div>
+<div class="aura" style="bottom:-300px;left:-260px;width:760px;height:560px;opacity:0.5"></div>
+<div class="grid-bg"></div>
+<div class="horizon"></div>
+<div style="position:relative;max-width:900px;margin:0 auto">
+<div class="sec-head rv" style="margin-bottom:40px">
+<div class="lbar"><span data-i18n="nav_trabalhe">Trabalhe conosco</span><span class="n">11</span></div>
+<h2 class="gtitle" data-i18n="sec09_title">Faça parte do time Fuzza.</h2>
+</div>
+<p style="margin:0 0 28px;max-width:640px;color:#c4c9da;font-size:17px;font-weight:300" data-i18n="trabalhe_intro">Envie seus dados e o seu currículo. Quando houver uma vaga com o seu perfil, o RH da Fuzza entra em contato.</p>
+<form class="glass rv" name="trabalhe-conosco" method="POST" action="/obrigado-rh.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="campo-extra" style="padding:36px">
+<input type="hidden" name="form-name" value="trabalhe-conosco">
+<p style="display:none"><label>Não preencha este campo: <input name="campo-extra"></label></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+<div class="field"><label for="t-nome" data-i18n="lbl_nome">Nome</label><input id="t-nome" name="nome" required type="text" placeholder="Seu nome completo" data-i18n-ph="ph_nome2"></div>
+<div class="field"><label for="t-tel" data-i18n="lbl_tel">Telefone</label><input id="t-tel" name="telefone" required type="text" placeholder="(00) 00000-0000" data-i18n-ph="ph_whats"></div>
+<div class="field"><label for="t-vaga" data-i18n="lbl_vaga">Vaga desejada</label><input id="t-vaga" name="vaga" required type="text" placeholder="Ex.: Analista de Comércio Exterior" data-i18n-ph="ph_vaga"></div>
+<div class="field"><label for="t-cv" data-i18n="lbl_cv">Currículo</label>
+<div class="filebtn"><input id="t-cv" name="curriculo" required type="file" accept=".pdf,.doc,.docx" aria-label="Anexar currículo" data-i18n-aria="cv_aria"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5l-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9"></path></svg><span id="cvlabel" data-i18n="cv_label_default" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Anexar currículo (PDF ou Word)</span></div>
+</div>
+</div>
+<p style="margin:20px 0 0;font-size:13px;color:#a9afc2" data-i18n="trabalhe_note">Formatos aceitos: PDF ou Word. Seus dados e o currículo serão enviados para rh@fuzzatrade.com.br e usados apenas para fins de recrutamento.</p>
+<div style="margin-top:24px;display:flex;justify-content:center">
+<button type="submit" class="btn-primary"><span data-i18n="btn_candidatura">Enviar candidatura</span> <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
+</div>
+<p style="margin:16px 0 0;text-align:center;font-size:13px;color:#a9afc2" data-i18n="form_trust_rh">Seus dados ficam só com o RH da Fuzza.</p>
+</form>
+</div>
+</section>
+
+<!-- RODAPÉ -->
+<footer style="background:#282828;padding:56px 24px 100px">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+<div style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px">
+<img src="assets/w_fuzza.png" alt="Fuzza Trade" style="height:46px;width:auto;display:block;align-self:flex-start">
+<p data-i18n="footer_tag" style="margin:0;color:#b8bdc9;font-size:15px;max-width:300px">Importar bem é o que importa.</p>
+</div>
+<div style="flex:1 1 180px;display:flex;flex-direction:column;gap:6px">
+<span data-i18n="footer_menu" style="font-size:13px;letter-spacing:0.1em;color:#fbbf26;text-transform:uppercase">Menu</span>
+<a href="#inicio" data-i18n="nav_inicio" style="color:#EFEFEF;text-decoration:none;min-height:32px;display:inline-block">Início</a>
+<a href="#sobre" data-i18n="nav_sobre" style="color:#EFEFEF;text-decoration:none;min-height:32px;display:inline-block">Sobre</a>
+<a href="#servicos" data-i18n="nav_servicos" style="color:#EFEFEF;text-decoration:none;min-height:32px;display:inline-block">Serviços</a>
+<a href="#catalogos" data-i18n="nav_catalogos" style="color:#EFEFEF;text-decoration:none;min-height:32px;display:inline-block">Segmentos</a>
+<a href="#trabalhe" data-i18n="nav_trabalhe" style="color:#EFEFEF;text-decoration:none;min-height:32px;display:inline-block">Trabalhe conosco</a>
+</div>
+<div style="flex:1 1 280px;display:flex;flex-direction:column;gap:8px">
+<span data-i18n="footer_contact" style="font-size:13px;letter-spacing:0.1em;color:#fbbf26;text-transform:uppercase">Contato</span>
+<a href="https://www.instagram.com/fuzzatrade/" style="color:#EFEFEF;text-decoration:none">Instagram @fuzzatrade</a>
+<a href="tel:+551935240510" style="color:#EFEFEF;text-decoration:none">+55 19 3524-0510</a>
+<a href="https://wa.me/5519994723962" style="color:#EFEFEF;text-decoration:none">WhatsApp +55 19 99472-3962</a>
+<a href="mailto:contato@fuzzatrade.com.br" style="color:#EFEFEF;text-decoration:none">contato@fuzzatrade.com.br</a>
+<span style="color:#b8bdc9">Rua 01, nº 939, Jardim Europa, Rio Claro/SP</span>
+<a href="/privacidade.html" id="lnk-privacidade" data-i18n="footer_privacy" style="color:#EFEFEF;text-decoration:none;margin-top:8px">Política de privacidade</a>
+</div>
+</div>
+</footer>
+
+<a class="wa" id="wa-float" href="https://wa.me/5519994723962?text=Ol%C3%A1%2C%20Luciana%21%20Vim%20pelo%20site%20da%20Fuzza%20Trade%20e%20gostaria%20de%20falar%20com%20um%20especialista." data-wa-phone="5519994723962" aria-label="Falar com a Luciana pelo WhatsApp" target="_blank" rel="noopener noreferrer"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.43 15.1L2 22l5.05-1.32A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.2 15.04l-.3-.18-3 .78.8-2.92-.2-.3A8.1 8.1 0 0 1 12.04 3.8zm-3 3.9c-.2 0-.5.07-.75.35-.26.28-1 .98-1 2.4s1.03 2.78 1.17 2.97c.14.2 2 3.2 4.9 4.36 2.4.95 2.88.76 3.4.72.52-.05 1.7-.7 1.93-1.37.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34-.28-.14-1.7-.84-1.96-.94-.27-.1-.46-.14-.65.14-.2.28-.75.94-.92 1.13-.17.2-.34.22-.62.08-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.28-.02-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.29.3-.48.1-.2.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.65-.49h-.55z"></path></svg></a>
+
+</div>
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.dataLayer = window.dataLayer || [];
+  function $(id) { return document.getElementById(id); }
+  function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  /* HERO ROTATIVO */
+  var SLIDES = {
+    pt: [
+      { kicker: 'Importação e exportação', badge: 'Fuzza', t1: 'Do pedido ao estoque, com ', hi: 'processo', t2: ' e inspeção.', sub: 'Importe com previsibilidade, da fábrica ao seu armazém.', cta: 'Solicite uma cotação' },
+      { kicker: 'Exportação', badge: 'Mundo', t1: 'Leve a sua indústria para o ', hi: 'mundo', t2: '.', sub: 'A Fuzza cuida de clientes no exterior, negociação, logística e conformidade.', cta: 'Fale com um especialista' },
+      { kicker: 'Com ou sem', badge: 'Radar', t1: 'Escolha o seu caminho de ', hi: 'importação', t2: '.', sub: 'Com radar, compre direto pela Scala. Sem radar, a Fuzza importa em seu nome.', cta: 'Conheça os caminhos' }
+    ],
+    en: [
+      { kicker: 'Import and export', badge: 'Fuzza', t1: 'From order to stock, with ', hi: 'process', t2: ' and inspection.', sub: 'Import with predictability, from the factory to your warehouse.', cta: 'Request a quote' },
+      { kicker: 'Export', badge: 'World', t1: 'Take your business to the ', hi: 'world', t2: '.', sub: 'Fuzza handles customers abroad, negotiation, logistics and compliance.', cta: 'Talk to a specialist' },
+      { kicker: 'With or without', badge: 'Radar', t1: 'Choose your ', hi: 'import path', t2: '.', sub: 'With a radar license, buy directly through Scala. Without one, Fuzza imports on your behalf.', cta: 'See your options' }
+    ],
+    es: [
+      { kicker: 'Importación y exportación', badge: 'Fuzza', t1: 'Del pedido al stock, con ', hi: 'proceso', t2: ' e inspección.', sub: 'Importe con previsibilidad, desde la fábrica hasta su almacén.', cta: 'Solicite una cotización' },
+      { kicker: 'Exportación', badge: 'Mundo', t1: 'Lleve su industria al ', hi: 'mundo', t2: '.', sub: 'Fuzza se encarga de los clientes en el exterior, la negociación, la logística y el cumplimiento.', cta: 'Hable con un especialista' },
+      { kicker: 'Con o sin', badge: 'Radar', t1: 'Elija su camino de ', hi: 'importación', t2: '.', sub: 'Con licencia "radar", compre directamente a través de Scala. Sin ella, Fuzza importa en su nombre.', cta: 'Conozca las opciones' }
+    ]
+  };
+  var slides = SLIDES.pt;
+  var idx = 0, tick = 0, timer = null;
+  var heroEls = all('.hero-el');
+  var dots = all('.dotbtn');
+  function show(i) {
+    idx = (i + slides.length) % slides.length;
+    tick++;
+    var s = slides[idx];
+    $('h-kicker').textContent = s.kicker; $('h-badge').textContent = s.badge;
+    $('h-t1').textContent = s.t1; $('h-hi').textContent = s.hi; $('h-t2').textContent = s.t2;
+    $('h-sub').textContent = s.sub; $('h-cta').textContent = s.cta;
+    heroEls.forEach(function (e) { e.style.animationName = (tick % 2 === 0) ? 'heroA' : 'heroB'; });
+    dots.forEach(function (d, k) {
+      var b = d.firstElementChild;
+      b.style.width = k === idx ? '30px' : '10px';
+      b.style.background = k === idx ? '#fbbf26' : 'rgba(239,239,239,0.35)';
+    });
+  }
+  function setSlidesLang(lang) {
+    slides = SLIDES[lang] || SLIDES.pt;
+    show(idx);
+  }
+  var hold = { hover: false, focus: false, off: false };
+  function sync() {
+    if (timer) { clearInterval(timer); timer = null; }
+    if (reduce || document.hidden || hold.hover || hold.focus || hold.off) return;
+    timer = setInterval(function () { show(idx + 1); }, 7000);
+  }
+  function restart() { sync(); }
+  if ($('hprev')) $('hprev').addEventListener('click', function () { show(idx - 1); restart(); });
+  if ($('hnext')) $('hnext').addEventListener('click', function () { show(idx + 1); restart(); });
+  dots.forEach(function (d) { d.addEventListener('click', function () { show(parseInt(d.getAttribute('data-i'), 10)); restart(); }); });
+  show(0); tick = 0; restart();
+  /* o carrossel pausa com o mouse/foco no hero, com a aba oculta ou com o hero fora da tela */
+  var heroSec = $('inicio');
+  if (heroSec) {
+    var fine = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+    if (fine) {
+      heroSec.addEventListener('mouseenter', function () { hold.hover = true; sync(); });
+      heroSec.addEventListener('mouseleave', function () { hold.hover = false; sync(); });
+    }
+    heroSec.addEventListener('focusin', function () { hold.focus = true; sync(); });
+    heroSec.addEventListener('focusout', function () { hold.focus = false; sync(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { hold.off = !es[0].isIntersecting; sync(); }, { threshold: 0.2 }).observe(heroSec);
+  }
+  document.addEventListener('visibilitychange', sync);
+  /* animações em loop pausam nas seções fora da tela */
+  if ('IntersectionObserver' in window) {
+    var ioOff = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('is-off', !e.isIntersecting); }); }, { rootMargin: '120px 0px' });
+    all('section').forEach(function (sct) { ioOff.observe(sct); });
+  }
+  /* cabeçalho ganha fundo ao rolar */
+  var hdrEl = document.querySelector('.hdr-outer');
+  if (hdrEl) {
+    var onSc = function () { hdrEl.classList.toggle('scrolled', window.scrollY > 12); };
+    onSc(); window.addEventListener('scroll', onSc, { passive: true });
+  }
+
+  /* MENU: item ativo conforme a rolagem */
+  var navLinks = all('[data-nav]');
+  function setActive(id) {
+    navLinks.forEach(function (a) {
+      var on = a.getAttribute('data-nav') === id;
+      a.style.background = on ? 'rgba(255,255,255,0.10)' : 'transparent';
+      a.style.boxShadow = on ? 'inset 0 0 0 1px rgba(255,255,255,0.14), inset 0 -1px 0 rgba(251,191,38,0.8)' : 'none';
+    });
+  }
+  setActive('inicio');
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    ['inicio', 'sobre', 'servicos', 'catalogos', 'trabalhe'].forEach(function (id) { var s = $(id); if (s) spy.observe(s); });
+  }
+
+  /* MENU NO CELULAR */
+  var mb = $('menubtn'), mn = $('mnav');
+  if (mb && mn) {
+    mb.addEventListener('click', function () {
+      var open = mn.classList.toggle('open');
+      mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    all('a', mn).forEach(function (a) { a.addEventListener('click', function () { mn.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); }); });
+  }
+
+  /* CONTAGEM DOS NÚMEROS */
+  var cnt = all('.cnt[data-to]');
+  if (cnt.length && !reduce && 'IntersectionObserver' in window) {
+    cnt.forEach(function (el) { el.textContent = '0+'; });
+    var ioC = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target, to = parseInt(el.getAttribute('data-to'), 10), t0 = performance.now(), dur = 1900;
+        ioC.unobserve(el);
+        (function step(now) {
+          var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(to * e) + '+';
+          if (p < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    }, { threshold: 0.3 });
+    cnt.forEach(function (el) { ioC.observe(el); });
+  }
+
+  /* ENTRADA EM SEQUÊNCIA (linha do tempo e organograma) */
+  function sequence(boxSel, itemSel, delays, preClass, props, threshold) {
+    var box = document.querySelector(boxSel);
+    if (!box || reduce || !('IntersectionObserver' in window)) return;
+    var items = all(itemSel, box);
+    items.forEach(function (n, i) {
+      n.classList.add(preClass);
+      var d = (delays[i] !== undefined ? delays[i] : i * 0.6) + 's';
+      n.style.transitionDelay = props.map(function () { return d; }).join(',');
+    });
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      items.forEach(function (n) { n.classList.remove(preClass); });
+      setTimeout(function () { items.forEach(function (n) { n.style.transitionDelay = '0s'; }); }, 4200);
+      io.disconnect();
+    }, { threshold: threshold });
+    io.observe(box);
+  }
+
+  /* COMO FUNCIONA: etapas entram uma a uma, a linha liga todas e o conjunto brilha */
+  var f5 = $('flow5');
+  if (f5 && !reduce && 'IntersectionObserver' in window) {
+    f5.classList.add('armed');
+    var io5 = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      f5.classList.remove('armed'); f5.classList.add('go');
+      setTimeout(function () { f5.classList.add('done'); }, 3000);
+      io5.disconnect();
+    }, { threshold: 0.3 });
+    io5.observe(f5);
+  }
+  sequence('.org-wrap', '.org-n', [0, 0.7, 1.4, 1.75], 'pre', ['opacity', 'transform'], 0.25);
+
+  /* NOME DO ARQUIVO DO CURRÍCULO */
+  var cv = $('t-cv');
+  if (cv) cv.addEventListener('change', function () {
+    var f = cv.files && cv.files[0];
+    $('cvlabel').textContent = f ? f.name : 'Anexar currículo (PDF ou Word)';
+  });
+
+  /* EVENTOS PARA O GOOGLE TAG MANAGER */
+  all('a[href*="wa.me"]').forEach(function (a) {
+    a.addEventListener('click', function () { window.dataLayer.push({ event: 'whatsapp_click' }); });
+  });
+
+  /* AVISO DE COOKIES (LGPD) */
+  var COOKIE_TXT = {
+    pt: { text: 'Usamos o armazenamento do navegador para lembrar sua escolha e o idioma. Medições e anúncios só serão ativados com o seu aceite.', link: 'Política de privacidade', accept: 'Aceitar', reject: 'Recusar', aria: 'Aviso de cookies' },
+    en: { text: 'We use your browser storage to remember your choice and language. Measurement and ads will only be enabled with your consent.', link: 'Privacy policy', accept: 'Accept', reject: 'Reject', aria: 'Cookie notice' },
+    es: { text: 'Usamos el almacenamiento del navegador para recordar su elección e idioma. Las mediciones y anuncios solo se activarán con su consentimiento.', link: 'Política de privacidad', accept: 'Aceptar', reject: 'Rechazar', aria: 'Aviso de cookies' }
+  };
+  var LANG = 'pt';
+  var KEY = 'fuzza_cookies';
+  var cookieBox = null;
+  function privacyHref() { return LANG === 'en' ? '/privacy-en.html' : (LANG === 'es' ? '/privacy-es.html' : '/privacidade.html'); }
+  function renderCookieBox() {
+    if (!cookieBox) return;
+    var t = COOKIE_TXT[LANG] || COOKIE_TXT.pt;
+    cookieBox.setAttribute('aria-label', t.aria);
+    cookieBox.innerHTML = '<div>' + t.text + ' <a href="' + privacyHref() + '">' + t.link + '</a>.</div><div class="row"><button type="button" class="ok" data-v="accepted">' + t.accept + '</button><button type="button" data-v="rejected">' + t.reject + '</button></div>';
+    all('button', cookieBox).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var v = btn.getAttribute('data-v');
+        try { localStorage.setItem(KEY, v); } catch (e) {}
+        window.dataLayer.push({ event: 'cookie_consent', status: v });
+        var box = cookieBox; cookieBox = null;
+        box.classList.add('out');
+        setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 220);
+      });
+    });
+  }
+  var savedCookie = null;
+  try { savedCookie = localStorage.getItem(KEY); } catch (e) {}
+  if (savedCookie) {
+    window.dataLayer.push({ event: 'cookie_consent', status: savedCookie });
+  } else {
+    cookieBox = document.createElement('div');
+    cookieBox.className = 'ckb'; cookieBox.setAttribute('role', 'dialog');
+    renderCookieBox();
+    setTimeout(function () { if (cookieBox) document.body.appendChild(cookieBox); }, 700);
+  }
+
+  /* ===================== I18N: troca de idioma (PT / EN / ES) ===================== */
+  var PT = {}, PHPT = {}, ARIAPT = {};
+  all('[data-i18n]').forEach(function (el) { if (!(el.getAttribute('data-i18n') in PT)) PT[el.getAttribute('data-i18n')] = el.textContent; });
+  all('[data-i18n-ph]').forEach(function (el) { var k = el.getAttribute('data-i18n-ph'); if (!(k in PHPT)) PHPT[k] = el.getAttribute('placeholder'); });
+  all('[data-i18n-aria]').forEach(function (el) { var k = el.getAttribute('data-i18n-aria'); if (!(k in ARIAPT)) ARIAPT[k] = el.getAttribute('aria-label'); });
+
+  var EN = {
+    nav_inicio: 'Home', nav_sobre: 'About', nav_servicos: 'Services', nav_catalogos: 'Segments', nav_trabalhe: 'Careers', nav_cta: 'Contact us',
+    hero_ghost: 'See our services',
+    sec01_kicker: 'About Fuzza', sec01_title: 'Importing well is what matters. More than 15 years connecting companies to the world.',
+    sec01_body: "Import or export with no surprises \u2014 that's what Fuzza Trade delivers. We handle the whole operation, from the supplier to your stock, with an office in Hong Kong and a team in Rio Claro, Brazil, following every step.",
+    form_trust: 'No commitment. A specialist replies within 1 business day.', form_trust_rh: "Your details stay only with Fuzza's HR team.",
+    num1_tag: 'Experience', num1_title: 'Years in business', num1_desc: 'More than 15 years in import and export',
+    num2_tag: 'Volume', num2_title: 'Containers per year', num2_desc: 'Handled in foreign trade operations',
+    num3_tag: 'Reach', num3_title: 'Partner countries', num3_desc: 'Suppliers and customers across different markets',
+    num4_tag: 'Portfolio', num4_title: 'Products in the catalog', num4_desc: 'Supplies and products for industry and retail',
+    sec02_kicker: 'Our services', sec02_title: 'Import, export and inspection with a single partner.',
+    svc1_title: 'Import for businesses', svc1_sub: 'With or without a "radar" license', svc1_txt: 'With a radar license, your company buys directly through Scala and reduces its tax burden. Without one, Fuzza imports on your behalf. Either way, we handle everything from the order to your stock.',
+    svc2_title: 'Export', svc2_sub: 'Take your business to the world', svc2_txt: 'We find buyers abroad, negotiate and structure logistics and compliance. Your company uses the production capacity it already has to sell overseas.',
+    svc3_title: 'Verified Factory', svc3_sub: 'Sourcing and supplier inspection in Asia', svc3_txt: 'We find suppliers and inspect the factory before you place your order, backed by our office in Hong Kong.',
+    svc4_title: 'Secure Import', svc4_sub: 'Specialized import consulting', svc4_txt: "We structure your company's import process with mentoring on your first operation and a review of your processes, including training for your team.",
+    svc5_title: 'Brand Lab', svc5_sub: 'Private label development', svc5_txt: 'We develop private-label products and brands for retailers, from concept to production, with the import structure already in place.',
+    sec03_kicker: 'How it works', sec03_title: 'We handle every step!',
+    cat_kicker: 'Catalog', cat_title: "See what we've already imported for your segment.", cat_intro: "Click a segment to see a sample of the products we've already handled. The full list is larger \u2014 ask Fuzza about your specific case.",
+    pl1_count: '18 items', pl2_count: '5 items', pl3_count: '6 items', pl4_count: '4 items', pl5_count: '2 items',
+    num5_tag: 'Base', num5_title: 'Customers served', num5_desc: 'Companies that have already bought from Fuzza',
+    num6_tag: 'Team', num6_title: 'Employees', num6_desc: 'A team dedicated to every step of the operation',
+    lbl_assunto: 'Subject', opt_assunto0: 'Select a subject', opt_assunto1: 'Import', opt_assunto2: 'Export', opt_assunto_outros: 'Other',
+    eco_fuzza_tag: 'Import and export', eco_fuzza: "Fuzza Trade is the company that runs your import and export operation, from order to stock. It helps customers buy and sell abroad with confidence, and brings together the Kazza Shop, Fuzzion and Fuzza Log brands.",
+    eco_scala_tag: 'Partner in China', eco_brands_label: "Fuzza Trade's brands", eco_btn_visit: 'Visit the store', eco_btn_know: 'Learn more',
+    eco_fuzzalog: 'Our own logistics and warehousing brand. It helps customers get their cargo from arrival in Brazil to their door, with tracking at every step of the way.',
+    tl1: 'Order', tl2: 'Production and inspection', tl3: 'Shipping and transit', tl4: 'Arrival and customs clearance', tl5: 'In your stock',
+    sec04_kicker: 'Segments', sec04_title: 'Choose your segment.',
+    seg1_title: 'Ceramics', seg1_desc: 'Supplies and raw materials for the ceramics industry.',
+    seg2_title: 'Industrial', seg2_desc: 'Products and components for industrial operations.',
+    seg3_title: 'Home', seg3_desc: 'Everyday items and home d\u00e9cor.',
+    seg4_title: 'Construction and finishing', seg4_desc: 'Flooring, coverings and construction materials.',
+    seg5_title: 'Equipment', seg5_desc: 'Machinery and electric forklifts.',
+    sec05_kicker: 'Presence in China', sec05_title: 'Close to our suppliers.',
+    china_body: "Our Hong Kong office keeps Fuzza close to the factories and follows every order closely.",
+    china1: 'Verification of the factory and production capacity', china2: 'Product check before shipping', china3: 'Follow-up until the product leaves the factory',
+    sec06_kicker: 'Our clients', sec06_title: 'Companies that trust Fuzza.',
+    sec07_kicker: 'Ecosystem', sec07_title: 'An ecosystem built for your business.',
+    eco_scala: "Scala is our partner company in China, with an office in Hong Kong. They handle sourcing, negotiation and inspection with manufacturers before any container leaves the factory, ensuring price, quality and lead time for Fuzza's customers.",
+    eco_kazza: 'Our own brand of products for home, kitchen, bathroom, flooring and office, sold directly to the end consumer. It helps retailers and shoppers buy with the same confidence as someone who imports directly.',
+    eco_fuzzion: 'Our own brand of electric forklifts, with no combustion engine. It helps companies that need material-handling capacity, with competitively priced equipment and local support.',
+    sec08_kicker: 'Contact us', sec08_title: "Let's work together!", sec_insta_kicker: 'Instagram', sec_insta_title: 'Follow us on Instagram',
+    lbl_nome: 'Name', lbl_empresa: 'Company', lbl_email: 'Email', lbl_whats: 'WhatsApp', lbl_need: 'What do you need to import or export?', btn_enviar: 'Send',
+    sec09_title: 'Join the Fuzza team.', trabalhe_intro: "Send us your details and your resume. When a position matches your profile, Fuzza's HR team will get in touch.",
+    lbl_tel: 'Phone', lbl_vaga: 'Desired position', lbl_cv: 'Resume', cv_label_default: 'Attach resume (PDF or Word)', cv_aria: 'Attach resume',
+    trabalhe_note: 'Accepted formats: PDF or Word. Your details and resume will be sent to rh@fuzzatrade.com.br and used only for recruitment purposes.',
+    btn_candidatura: 'Submit application',
+    footer_menu: 'Menu', footer_contact: 'Contact', footer_tag: 'Importing well is what matters.', footer_privacy: 'Privacy policy',
+    btn_saiba_mais: 'Learn more'
+  };
+  var ES = {
+    nav_inicio: 'Inicio', nav_sobre: 'Nosotros', nav_servicos: 'Servicios', nav_catalogos: 'Segmentos', nav_trabalhe: 'Trabaje con nosotros', nav_cta: 'Cont\u00e1ctenos',
+    hero_ghost: 'Conozca los servicios',
+    sec01_kicker: 'Sobre Fuzza', sec01_title: 'Importar bien es lo que importa. M\u00e1s de 15 a\u00f1os conectando empresas con el mundo.',
+    sec01_body: 'Importar o exportar sin sorpresas: eso es lo que entrega Fuzza Trade. Nos encargamos de toda la operaci\u00f3n, desde el proveedor hasta su stock, con oficina en Hong Kong y un equipo en Rio Claro/SP dando seguimiento a cada etapa.',
+    form_trust: 'Sin compromiso. Un especialista responde en hasta 1 d\u00eda h\u00e1bil.', form_trust_rh: 'Sus datos quedan solo con el equipo de RR. HH. de Fuzza.',
+    num1_tag: 'Experiencia', num1_title: 'A\u00f1os en el mercado', num1_desc: 'M\u00e1s de 15 a\u00f1os en importaci\u00f3n y exportaci\u00f3n',
+    num2_tag: 'Volumen', num2_title: 'Contenedores por a\u00f1o', num2_desc: 'Movilizados en operaciones de comercio exterior',
+    num3_tag: 'Alcance', num3_title: 'Pa\u00edses socios', num3_desc: 'Proveedores y clientes en diferentes mercados',
+    num4_tag: 'Portafolio', num4_title: 'Productos en el cat\u00e1logo', num4_desc: 'Insumos y productos para la industria y el comercio minorista',
+    sec02_kicker: 'Nuestros servicios', sec02_title: 'Importaci\u00f3n, exportaci\u00f3n e inspecci\u00f3n con un solo socio.',
+    svc1_title: 'Importaci\u00f3n para empresas', svc1_sub: 'Con o sin licencia "radar"', svc1_txt: 'Con licencia "radar", la empresa compra directamente a trav\u00e9s de Scala y reduce la carga tributaria. Sin ella, Fuzza importa en su nombre. En ambos casos, nos encargamos de todo, desde el pedido hasta el stock.',
+    svc2_title: 'Exportaci\u00f3n', svc2_sub: 'Lleve su industria al mundo', svc2_txt: 'Buscamos compradores en el exterior, negociamos y estructuramos la log\u00edstica y el cumplimiento normativo. Su empresa utiliza la capacidad productiva que ya tiene para vender afuera.',
+    svc3_title: 'F\u00e1brica Verificada', svc3_sub: 'Sourcing e inspecci\u00f3n de proveedores en Asia', svc3_txt: 'Encontramos proveedores e inspeccionamos la f\u00e1brica antes de que usted cierre el pedido, con el respaldo de nuestra oficina en Hong Kong.',
+    svc4_title: 'Importaci\u00f3n Blindada', svc4_sub: 'Consultor\u00eda especializada en importaci\u00f3n', svc4_txt: 'Estructuramos la importaci\u00f3n de su empresa con asesor\u00eda en la primera operaci\u00f3n y revisi\u00f3n de procesos, con capacitaci\u00f3n para su equipo.',
+    svc5_title: 'Brand Lab', svc5_sub: 'Desarrollo de marcas propias', svc5_txt: 'Desarrollamos productos y marcas propias para comercios, desde el concepto hasta la producci\u00f3n, con la estructura de importaci\u00f3n ya lista.',
+    sec03_kicker: 'C\u00f3mo funciona', sec03_title: '\u00a1Nos encargamos de todas las etapas!',
+    cat_kicker: 'Cat\u00e1logo', cat_title: 'Vea lo que ya importamos para su segmento.', cat_intro: 'Haga clic en un segmento para ver una muestra de los productos que ya movilizamos. La lista completa es mayor, consulte con Fuzza su caso.',
+    pl1_count: '18 art\u00edculos', pl2_count: '5 art\u00edculos', pl3_count: '6 art\u00edculos', pl4_count: '4 art\u00edculos', pl5_count: '2 art\u00edculos',
+    num5_tag: 'Base', num5_title: 'Clientes atendidos', num5_desc: 'Empresas que ya compraron con Fuzza',
+    num6_tag: 'Equipo', num6_title: 'Empleados', num6_desc: 'Un equipo dedicado a cada etapa de la operaci\u00f3n',
+    lbl_assunto: 'Asunto', opt_assunto0: 'Seleccione el asunto', opt_assunto1: 'Importaci\u00f3n', opt_assunto2: 'Exportaci\u00f3n', opt_assunto_outros: 'Otros',
+    eco_fuzza_tag: 'Importaci\u00f3n y exportaci\u00f3n', eco_fuzza: 'Fuzza Trade es la empresa que conduce su operaci\u00f3n de importaci\u00f3n y exportaci\u00f3n, del pedido al stock. Ayuda al cliente a comprar y vender en el exterior con seguridad, y re\u00fane las marcas Kazza Shop, Fuzzion y Fuzza Log.',
+    eco_scala_tag: 'Socio en China', eco_brands_label: 'Marcas de Fuzza Trade', eco_btn_visit: 'Visitar la tienda', eco_btn_know: 'Conocer m\u00e1s',
+    eco_fuzzalog: 'Nuestra marca propia de log\u00edstica y almacenamiento. Ayuda al cliente a llevar la carga desde el desembarco en Brasil hasta la puerta de su negocio, con seguimiento en cada etapa del transporte.',
+    tl1: 'Pedido', tl2: 'Producci\u00f3n e inspecci\u00f3n', tl3: 'Embarque y traves\u00eda', tl4: 'Llegada y despacho aduanero', tl5: 'En su stock',
+    sec04_kicker: 'Segmentos', sec04_title: 'Elija su segmento.',
+    seg1_title: 'Cer\u00e1mica', seg1_desc: 'Insumos y materias primas para la industria cer\u00e1mica.',
+    seg2_title: 'Industrial', seg2_desc: 'Productos y componentes para la operaci\u00f3n industrial.',
+    seg3_title: 'Hogar', seg3_desc: 'Art\u00edculos para el d\u00eda a d\u00eda y la decoraci\u00f3n del hogar.',
+    seg4_title: 'Construcci\u00f3n y acabados', seg4_desc: 'Pisos, revestimientos y materiales de obra.',
+    seg5_title: 'Equipos', seg5_desc: 'Maquinaria y montacargas el\u00e9ctricos.',
+    sec05_kicker: 'Presencia en China', sec05_title: 'Cerca de nuestros proveedores.',
+    china_body: 'Nuestra oficina en Hong Kong acerca a Fuzza a las f\u00e1bricas y da seguimiento de cerca a cada pedido.',
+    china1: 'Verificaci\u00f3n de la f\u00e1brica y de la capacidad productiva', china2: 'Verificaci\u00f3n del producto antes del embarque', china3: 'Seguimiento hasta la salida de la f\u00e1brica',
+    sec06_kicker: 'Nuestros clientes', sec06_title: 'Empresas que conf\u00edan en Fuzza.',
+    sec07_kicker: 'Ecosistema', sec07_title: 'Un ecosistema pensado para su negocio.',
+    eco_scala: 'Scala es nuestra empresa socia en China, con oficina en Hong Kong. Se encarga del sourcing, la negociaci\u00f3n y la inspecci\u00f3n junto a los fabricantes antes de que cualquier contenedor salga de la f\u00e1brica, garantizando precio, calidad y plazo para el cliente de Fuzza.',
+    eco_kazza: 'Nuestra marca propia de productos para el hogar, cocina, ba\u00f1o, piso y oficina, vendida directamente al consumidor final. Ayuda al comercio y al cliente final a comprar con la misma confianza de quien importa directo.',
+    eco_fuzzion: 'Nuestra marca propia de montacargas el\u00e9ctricos, sin motor de combusti\u00f3n. Ayuda a empresas que necesitan capacidad de movimiento en la operaci\u00f3n, con equipos de precio competitivo y soporte local.',
+    sec08_kicker: 'Hable con nosotros', sec08_title: '\u00a1Trabajemos juntos!', sec_insta_kicker: 'Instagram', sec_insta_title: 'S\u00edguenos en Instagram',
+    lbl_nome: 'Nombre', lbl_empresa: 'Empresa', lbl_email: 'Correo electr\u00f3nico', lbl_whats: 'WhatsApp', lbl_need: '\u00bfQu\u00e9 necesita importar o exportar?', btn_enviar: 'Enviar',
+    sec09_title: 'Forme parte del equipo Fuzza.', trabalhe_intro: 'Env\u00ede sus datos y su curr\u00edculum. Cuando haya una vacante con su perfil, el equipo de RR. HH. de Fuzza se pondr\u00e1 en contacto.',
+    lbl_tel: 'Tel\u00e9fono', lbl_vaga: 'Puesto deseado', lbl_cv: 'Curr\u00edculum', cv_label_default: 'Adjuntar curr\u00edculum (PDF o Word)', cv_aria: 'Adjuntar curr\u00edculum',
+    trabalhe_note: 'Formatos aceptados: PDF o Word. Sus datos y curr\u00edculum se enviar\u00e1n a rh@fuzzatrade.com.br y se usar\u00e1n \u00fanicamente para fines de contrataci\u00f3n.',
+    btn_candidatura: 'Enviar candidatura',
+    footer_menu: 'Men\u00fa', footer_contact: 'Contacto', footer_tag: 'Importar bien es lo que importa.', footer_privacy: 'Pol\u00edtica de privacidad',
+    btn_saiba_mais: 'Saber m\u00e1s'
+  };
+  var PH_EN = { ph_nome: 'Your name', ph_empresa: 'Company name', ph_email: 'you@company.com', ph_whats: '(00) 00000-0000', ph_need: 'Describe the product or service', ph_nome2: 'Your full name', ph_vaga: 'E.g.: Foreign Trade Analyst' };
+  var PH_ES = { ph_nome: 'Su nombre', ph_empresa: 'Nombre de la empresa', ph_email: 'usted@empresa.com', ph_whats: '(00) 00000-0000', ph_need: 'Describa el producto o servicio', ph_nome2: 'Su nombre completo', ph_vaga: 'Ej.: Analista de Comercio Exterior' };
+  var ARIA_EN = { cv_aria: 'Attach resume', fx_aria: 'US dollar rate right now', ptax_aria: 'Check PTAX at the Central Bank of Brazil' };
+  var ARIA_ES = { cv_aria: 'Adjuntar curr\u00edculum', fx_aria: 'D\u00f3lar comercial ahora', ptax_aria: 'Consultar la PTAX en el Banco Central de Brasil' };
+
+  var WA_NAME_LABEL = { pt: '', en: '', es: '' };
+  var WA_TOPIC = {
+    wa_svc1: { pt: 'Importação para empresas', en: 'import for businesses', es: 'importación para empresas' },
+    wa_svc2: { pt: 'Exportação', en: 'export', es: 'exportación' },
+    wa_svc3: { pt: 'Fábrica Verificada', en: 'the Verified Factory service', es: 'el servicio Fábrica Verificada' },
+    wa_svc4: { pt: 'Importação Blindada', en: 'the Secure Import service', es: 'el servicio Importación Blindada' },
+    wa_svc5: { pt: 'Brand Lab', en: 'Brand Lab', es: 'Brand Lab' },
+    wa_seg1: { pt: 'produtos para Cerâmica', en: 'products for the Ceramics segment', es: 'productos para el sector Cerámica' },
+    wa_seg2: { pt: 'produtos Industriais', en: 'Industrial products', es: 'productos Industriales' },
+    wa_seg3: { pt: 'produtos para Casa', en: 'Home products', es: 'productos para el Hogar' },
+    wa_seg4: { pt: 'Construção e acabamento', en: 'Construction and finishing', es: 'Construcción y acabados' },
+    wa_seg5: { pt: 'Equipamentos', en: 'Equipment', es: 'Equipos' }
+  };
+  var WA_TPL = {
+    pt: { named: 'Olá, {name}! Vim pelo site da Fuzza Trade e quero saber mais sobre {topic}.', noname: 'Olá! Vim pelo site da Fuzza Trade e quero saber mais sobre {topic}.' },
+    en: { named: "Hello, {name}! I came from the Fuzza Trade website and I'd like to know more about {topic}.", noname: "Hello! I came from the Fuzza Trade website and I'd like to know more about {topic}." },
+    es: { named: '¡Hola, {name}! Vine desde el sitio web de Fuzza Trade y quiero saber más sobre {topic}.', noname: '¡Hola! Vine desde el sitio web de Fuzza Trade y quiero saber más sobre {topic}.' }
+  };
+  var WA_FLOAT = {
+    pt: { msg: 'Olá, Luciana! Vim pelo site da Fuzza Trade e gostaria de falar com um especialista.', aria: 'Falar com a Luciana pelo WhatsApp' },
+    en: { msg: "Hello, Luciana! I came from the Fuzza Trade website and I'd like to talk to a specialist.", aria: 'Chat with Luciana on WhatsApp' },
+    es: { msg: '¡Hola, Luciana! Vine desde el sitio web de Fuzza Trade y me gustaría hablar con un especialista.', aria: 'Hablar con Luciana por WhatsApp' }
+  };
+
+  function updateWaLinks(lang) {
+    all('a[data-wa-phone][data-wa-key]').forEach(function (a) {
+      var phone = a.getAttribute('data-wa-phone'), key = a.getAttribute('data-wa-key'), name = a.getAttribute('data-wa-name') || '';
+      var topic = (WA_TOPIC[key] && (WA_TOPIC[key][lang] || WA_TOPIC[key].pt)) || '';
+      var tpl = (WA_TPL[lang] || WA_TPL.pt)[name ? 'named' : 'noname'];
+      var msg = tpl.replace('{name}', name).replace('{topic}', topic);
+      a.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
+    });
+    var fl = $('wa-float');
+    if (fl) {
+      var f = WA_FLOAT[lang] || WA_FLOAT.pt;
+      fl.href = 'https://wa.me/' + fl.getAttribute('data-wa-phone') + '?text=' + encodeURIComponent(f.msg);
+      fl.setAttribute('aria-label', f.aria);
+    }
+  }
+
+  var LANGKEY = 'fuzza_lang';
+  function applyLang(lang) {
+    if (lang !== 'pt' && lang !== 'en' && lang !== 'es') lang = 'pt';
+    LANG = lang;
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    var lp = document.getElementById('lnk-privacidade');
+    if (lp) lp.setAttribute('href', lang === 'en' ? '/privacy-en.html' : (lang === 'es' ? '/privacy-es.html' : '/privacidade.html'));
+    var DICT = lang === 'en' ? EN : (lang === 'es' ? ES : PT);
+    var PHDICT = lang === 'en' ? PH_EN : (lang === 'es' ? PH_ES : PHPT);
+    var ARIADICT = lang === 'en' ? ARIA_EN : (lang === 'es' ? ARIA_ES : ARIAPT);
+    all('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      el.textContent = (k in DICT) ? DICT[k] : PT[k];
+    });
+    all('[data-i18n-ph]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-ph');
+      el.setAttribute('placeholder', (k in PHDICT) ? PHDICT[k] : PHPT[k]);
+    });
+    all('[data-i18n-aria]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-aria');
+      el.setAttribute('aria-label', (k in ARIADICT) ? ARIADICT[k] : ARIAPT[k]);
+    });
+    setSlidesLang(lang);
+    updateWaLinks(lang);
+    if (cookieBox) renderCookieBox();
+    all('#langsw button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+    try { localStorage.setItem(LANGKEY, lang); } catch (e) {}
+    window.dataLayer.push({ event: 'language_change', language: lang });
+  }
+  all('#langsw button').forEach(function (b) {
+    b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+  });
+  var initialLang = 'pt';
+  try { initialLang = localStorage.getItem(LANGKEY) || 'pt'; } catch (e) {}
+  if (initialLang !== 'pt') applyLang(initialLang); else updateWaLinks('pt');
+
+  /* COTAÇÃO DO DÓLAR (tempo real, atualiza a cada 30s) */
+  (function () {
+    var vEl = $('fx-v'), aEl = $('fx-d'), box = $('fx-usd');
+    if (!vEl) return;
+    box.setAttribute('aria-live', 'off');
+    var last = null, flashT = null;
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function show(val, src) {
+      vEl.textContent = 'R$ ' + val.toFixed(4).replace('.', ',');
+      if (last !== null && val !== last) {
+        var up = val > last;
+        aEl.textContent = up ? '\u25B2' : '\u25BC';
+        aEl.className = 'fx-d ' + (up ? 'up' : 'down');
+        clearTimeout(flashT);
+        flashT = setTimeout(function () { aEl.textContent = ''; aEl.className = 'fx-d'; }, 4000);
+      }
+      last = val;
+      var d = new Date();
+      box.title = src + ' \u00b7 ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+      box.className = 'fx-usd live';
+      box.style.display = '';
+    }
+    if (window.__FX_PREVIEW) {
+      var pv = window.__FX_PREVIEW.v;
+      show(pv, 'Prévia');
+      if (window.__FX_PREVIEW.sim) setInterval(function () { pv += (Math.random() - 0.5) * 0.0016; show(pv, 'Prévia (simulação)'); }, 4000);
+      return;
+    }
+    var FX_KEY = ''; /* opcional: chave gratuita da AwesomeAPI (dólar comercial) */
+    function getJSON(url) {
+      var c = ('AbortController' in window) ? new AbortController() : null;
+      var t = c ? setTimeout(function () { c.abort(); }, 6000) : null;
+      return fetch(url, c ? { signal: c.signal, cache: 'no-store' } : { cache: 'no-store' }).then(function (r) {
+        if (t) clearTimeout(t);
+        if (!r.ok) throw new Error('http');
+        return r.json();
+      });
+    }
+    function fromAwesome() {
+      if (!FX_KEY) return Promise.reject();
+      return getJSON('https://economia.awesomeapi.com.br/json/last/USD-BRL?token=' + FX_KEY).then(function (d) { show(parseFloat(d.USDBRL.bid), 'Dólar comercial'); });
+    }
+    function fromCoinbase() {
+      return getJSON('https://api.coinbase.com/v2/exchange-rates?currency=USD').then(function (d) {
+        var v = parseFloat(d.data.rates.BRL); if (!(v > 0)) throw new Error('vazio');
+        show(v, 'Dólar de mercado (tempo real)');
+      });
+    }
+    function fromCDN() {
+      return getJSON('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json').then(function (d) {
+        var v = d.usd.brl; if (!(v > 0)) throw new Error('vazio');
+        show(v, 'Referência do dia');
+      });
+    }
+    function bcDate(d) { return pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + '-' + d.getFullYear(); }
+    function fromBCB() {
+      var now = new Date(), ini = new Date(now.getTime() - 9 * 86400000);
+      var url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='" + bcDate(ini) + "'&@dataFinalCotacao='" + bcDate(now) + "'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json";
+      return getJSON(url).then(function (d) {
+        if (!d.value || !d.value.length) throw new Error('vazio');
+        show(d.value[0].cotacaoVenda, 'PTAX (Banco Central)');
+      });
+    }
+    function load() {
+      if (document.hidden) return;
+      fromAwesome().catch(fromCoinbase).catch(fromCDN).catch(fromBCB).catch(function () {
+        if (last === null) box.style.display = 'none';
+      });
+    }
+    box.style.display = 'none';
+    load();
+    setInterval(load, 30000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
+  })();
+
+  /* idioma nos formulários: a página de agradecimento também fica no mesmo idioma */
+  all('form').forEach(function (f) {
+    f.addEventListener('submit', function () {
+      try {
+        var u = f.getAttribute('action').split('?')[0];
+        f.setAttribute('action', u + (LANG === 'pt' ? '' : ('?lang=' + LANG)));
+      } catch (e) {}
+      var sb = f.querySelector('button[type=submit]');
+      if (sb && !sb.classList.contains('is-sending')) {
+        var lab = sb.querySelector('[data-i18n]'), key = lab ? lab.getAttribute('data-i18n') : null, prev = lab ? lab.textContent : '';
+        sb.classList.add('is-sending'); sb.setAttribute('aria-busy', 'true');
+        if (lab) { lab.removeAttribute('data-i18n'); lab.textContent = ({ pt: 'Enviando\u2026', en: 'Sending\u2026', es: 'Enviando\u2026' })[LANG]; }
+        setTimeout(function () {
+          sb.classList.remove('is-sending'); sb.removeAttribute('aria-busy');
+          if (lab && key) { lab.setAttribute('data-i18n', key); lab.textContent = prev; }
+        }, 15000);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

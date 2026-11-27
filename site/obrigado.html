@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mensagem enviada | Fuzza Trade</title>
+<meta name="description" content="Mensagem enviada">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mensagem enviada | Fuzza Trade">
+<meta property="og:description" content="Mensagem enviada">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#13162a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Tag Manager (desativado). Para ativar: troque GTM-XXXXXXX pelo seu ID e apague a linha INICIO-COMENTARIO e a linha FIM-COMENTARIO. -->
+<!-- INICIO-COMENTARIO
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+FIM-COMENTARIO -->
+<style>*{box-sizing:border-box}body{margin:0;background:#000;color:#EFEFEF;font-family:'Acumin Pro','Hanken Grotesk',system-ui,sans-serif;line-height:1.6}
+.w{max-width:760px;margin:0 auto;padding:56px 24px 90px}a{color:#fbbf26}h1{font-weight:400;font-size:clamp(30px,5vw,48px);letter-spacing:-0.02em;margin:28px 0 14px}h2{font-weight:500;font-size:22px;margin:34px 0 8px}
+p,li{color:#c4c9da;font-size:17px}.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:12px;background:#EFEFEF;color:#0a0a0a;font-weight:600;text-decoration:none;margin-top:18px}
+.card{padding:36px;border-radius:22px;border:1px solid rgba(255,255,255,0.1);background:radial-gradient(120% 90% at 0% 0%,rgba(51,84,161,0.35),rgba(51,84,161,0) 60%),rgba(14,15,22,0.7)}
+.card{animation:fzcard .35s cubic-bezier(.23,1,.32,1) both}
+.ok-badge{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#fbbf26;box-shadow:0 0 40px -6px rgba(251,191,38,.7);animation:fzpop .42s cubic-bezier(.34,1.56,.64,1) .12s both}
+.card h1,.card p,.card .btn{animation:fzrise .4s cubic-bezier(.23,1,.32,1) both}
+.card h1{animation-delay:.18s}.card p{animation-delay:.24s}.card .btn{animation-delay:.3s}
+@keyframes fzcard{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fzpop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes fzrise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fzfade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.card,.ok-badge,.card h1,.card p,.card .btn{animation-name:fzfade}}</style></head>
+<body>
+<!-- Google Tag Manager noscript (desativado). Para ativar: troque GTM-XXXXXXX e apague a linha INICIO-COMENTARIO-NS e a linha FIM-COMENTARIO-NS. -->
+<!-- INICIO-COMENTARIO-NS
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+FIM-COMENTARIO-NS -->
+<div class="w"><a href="/"><img src="assets/w_fuzza.png" alt="Fuzza Trade" style="height:40px"></a>
+<div class="card"><span class="ok-badge" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span><h1 id="ty-h1">Recebemos o seu contato.</h1><p id="ty-p">Obrigado por falar com a Fuzza Trade. Nossa equipe retorna o mais breve possível.</p><a class="btn" id="ty-btn" href="/">Voltar ao site</a></div>
+</div>
+<script>(function(){
+  var D={
+    en:{h1:'We received your message.',p:'Thank you for contacting Fuzza Trade. Our team will get back to you shortly.',btn:'Back to the website'},
+    es:{h1:'Recibimos su mensaje.',p:'Gracias por contactar a Fuzza Trade. Nuestro equipo se pondrá en contacto a la brevedad.',btn:'Volver al sitio'}
+  };
+  try{
+    var m=location.search.match(/[?&]lang=(en|es)/);
+    if(m){
+      var t=D[m[1]];
+      document.documentElement.lang=m[1];
+      var h1=document.getElementById('ty-h1'),p=document.getElementById('ty-p'),b=document.getElementById('ty-btn');
+      if(h1)h1.textContent=t.h1; if(p)p.textContent=t.p; if(b)b.textContent=t.btn;
+    }
+  }catch(e){}
+})();</script>
+</body>
+</html>
